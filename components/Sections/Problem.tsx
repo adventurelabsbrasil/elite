@@ -29,13 +29,13 @@ const problems = [
 
 export function Problem() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-elite-navy">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-navy mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-quartz mb-4">
             Você já passou por isso?
           </h2>
-          <p className="text-xl text-elite-navy/70 max-w-3xl mx-auto">
+          <p className="text-xl text-elite-quartz/80 max-w-3xl mx-auto">
             Problemas comuns que impedem loteadoras de alcançar o esgotamento do
             VGV
           </p>
@@ -47,17 +47,17 @@ export function Problem() {
             return (
               <div
                 key={index}
-                className="p-6 rounded-xl border border-elite-navy/10 bg-elite-quartz/50 hover:border-elite-flow/30 transition-colors"
+                className="p-6 rounded-xl border border-elite-flow/20 bg-elite-navy/80 hover:border-elite-flow/30 transition-colors"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-elite-navy/5 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-elite-navy" />
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-elite-flow/10 flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-elite-flow" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-display font-semibold text-elite-navy mb-2">
+                    <h3 className="text-xl font-display font-semibold text-elite-quartz mb-2">
                       {problem.title}
                     </h3>
-                    <p className="text-elite-navy/70">{problem.description}</p>
+                    <p className="text-elite-quartz/80">{problem.description}</p>
                   </div>
                 </div>
               </div>

@@ -3,7 +3,7 @@ import { CheckCircle2, MessageCircle } from "lucide-react";
 
 export default function ObrigadoPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-elite-quartz to-white flex items-center justify-center py-20 px-4">
+    <main className="min-h-screen bg-elite-navy flex items-center justify-center py-20 px-4">
       <div className="max-w-2xl w-full text-center space-y-8">
         <div className="flex justify-center mb-8">
           <div className="w-20 h-20 rounded-full bg-elite-flow/10 flex items-center justify-center">
@@ -12,21 +12,21 @@ export default function ObrigadoPage() {
         </div>
 
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-elite-navy">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-elite-quartz">
             Inscrição Confirmada!
           </h1>
-          <p className="text-xl text-elite-navy/70">
+          <p className="text-xl text-elite-quartz/90">
             Sua vaga no webinar está garantida. Você receberá todas as
             informações por email.
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 border border-elite-navy/10 shadow-lg space-y-6">
+        <div className="bg-elite-navy/80 rounded-2xl p-8 border border-elite-flow/20 shadow-lg space-y-6">
           <div className="space-y-4">
-            <h2 className="text-2xl font-display font-semibold text-elite-navy">
+            <h2 className="text-2xl font-display font-semibold text-elite-quartz">
               Próximos Passos
             </h2>
-            <ul className="text-left space-y-3 text-elite-navy/70">
+            <ul className="text-left space-y-3 text-elite-quartz/90">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-elite-flow flex-shrink-0 mt-0.5" />
                 <span>

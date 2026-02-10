@@ -13,11 +13,11 @@ const notForWho =
 
 export function TargetAudience() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-elite-navy/95">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-navy mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-quartz mb-4">
               Para quem é: Dono de Loteadora
             </h2>
           </div>
@@ -31,12 +31,12 @@ export function TargetAudience() {
               return (
                 <div
                   key={index}
-                  className="flex items-start gap-4 bg-elite-quartz/50 rounded-xl p-6 border border-elite-navy/10"
+                  className="flex items-start gap-4 bg-elite-navy/80 rounded-xl p-6 border border-elite-flow/20"
                 >
                   <CheckCircle2 className="w-6 h-6 text-elite-flow flex-shrink-0 mt-0.5" />
-                  <p className="text-elite-navy/80 leading-relaxed text-lg">
+                  <p className="text-elite-quartz/90 leading-relaxed text-lg">
                     {boldPart && (
-                      <strong className="text-elite-navy">{boldPart} </strong>
+                      <strong className="text-elite-quartz">{boldPart} </strong>
                     )}
                     {restPart}
                   </p>
@@ -48,14 +48,14 @@ export function TargetAudience() {
 
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-elite-navy mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-elite-quartz mb-4">
               🚫 Para quem NÃO é
             </h2>
           </div>
-          <div className="flex items-start gap-4 bg-red-50 rounded-xl p-6 border border-red-200">
-            <XCircle className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
-            <p className="text-elite-navy/80 leading-relaxed text-lg">
-              <strong className="text-elite-navy">
+          <div className="flex items-start gap-4 bg-elite-navy/80 rounded-xl p-6 border border-elite-sold-red/30">
+            <XCircle className="w-6 h-6 text-elite-sold-red flex-shrink-0 mt-0.5" />
+            <p className="text-elite-quartz/90 leading-relaxed text-lg">
+              <strong className="text-elite-quartz">
                 Este programa não é para{" "}
               </strong>
               {notForWho.replace("Este programa não é para", "")}

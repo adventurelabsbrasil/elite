@@ -76,12 +76,12 @@ export function QualificationForm() {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-elite-navy/10">
+    <div className="bg-elite-navy/80 rounded-2xl p-8 md:p-10 shadow-xl border border-elite-flow/20">
     <div className="mb-8">
-      <h3 className="text-2xl md:text-3xl font-display font-bold text-elite-navy mb-2">
+      <h3 className="text-2xl md:text-3xl font-display font-bold text-elite-quartz mb-2">
         QUERO ACESSAR O MÉTODO ELITE
       </h3>
-      <p className="text-elite-navy/70">
+      <p className="text-elite-quartz/80">
         Preencha o formulário abaixo para garantir sua participação no meet
         exclusivo
       </p>
@@ -91,7 +91,7 @@ export function QualificationForm() {
       <div>
         <label
           htmlFor="nome"
-          className="block text-sm font-medium text-elite-navy mb-2"
+          className="block text-sm font-medium text-elite-quartz mb-2"
         >
           Nome completo *
         </label>
@@ -102,7 +102,7 @@ export function QualificationForm() {
           className={`w-full px-4 py-3 rounded-lg border ${
             errors.nome
               ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-              : "border-elite-navy/20 focus:border-elite-flow focus:ring-elite-flow"
+              : "border-elite-flow/30 bg-elite-navy/50 text-elite-quartz placeholder:text-elite-quartz/50 focus:border-elite-flow focus:ring-elite-flow"
           } focus:outline-none focus:ring-2 transition-colors`}
           placeholder="Seu nome completo"
         />
@@ -114,7 +114,7 @@ export function QualificationForm() {
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-elite-navy mb-2"
+          className="block text-sm font-medium text-elite-quartz mb-2"
         >
           Email corporativo *
         </label>
@@ -125,7 +125,7 @@ export function QualificationForm() {
           className={`w-full px-4 py-3 rounded-lg border ${
             errors.email
               ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-              : "border-elite-navy/20 focus:border-elite-flow focus:ring-elite-flow"
+              : "border-elite-flow/30 bg-elite-navy/50 text-elite-quartz placeholder:text-elite-quartz/50 focus:border-elite-flow focus:ring-elite-flow"
           } focus:outline-none focus:ring-2 transition-colors`}
           placeholder="seu@email.com"
         />
@@ -137,7 +137,7 @@ export function QualificationForm() {
       <div>
         <label
           htmlFor="whatsapp"
-          className="block text-sm font-medium text-elite-navy mb-2"
+          className="block text-sm font-medium text-elite-quartz mb-2"
         >
           WhatsApp com DDD *
         </label>
@@ -151,7 +151,7 @@ export function QualificationForm() {
       <div>
         <label
           htmlFor="revenue_range"
-          className="block text-sm font-medium text-elite-navy mb-2"
+          className="block text-sm font-medium text-elite-quartz mb-2"
         >
           Média de Faturamento do seu negócio *
         </label>
@@ -161,8 +161,8 @@ export function QualificationForm() {
           className={`w-full px-4 py-3 rounded-lg border ${
             errors.revenue_range
               ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-              : "border-elite-navy/20 focus:border-elite-flow focus:ring-elite-flow"
-          } focus:outline-none focus:ring-2 transition-colors bg-white`}
+              : "border-elite-flow/30 bg-elite-navy/50 text-elite-quartz placeholder:text-elite-quartz/50 focus:border-elite-flow focus:ring-elite-flow"
+          } focus:outline-none focus:ring-2 transition-colors`}
         >
           <option value="">Selecione uma opção</option>
           {REVENUE_RANGES.map((range) => (
@@ -199,7 +199,7 @@ export function QualificationForm() {
         )}
       </button>
 
-      <p className="text-xs text-elite-navy/60 text-center">
+      <p className="text-xs text-elite-quartz/60 text-center">
         Ao preencher este formulário, você concorda em receber informações
         sobre o webinar.
       </p>

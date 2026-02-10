@@ -14,33 +14,33 @@ const CTA_URL = "/inscreva-se"; // formulário de inscrição (Supabase leads)
 
 export default function EliteLanding() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-900">
+    <div className="min-h-screen bg-elite-navy text-elite-quartz">
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-slate-200/80 bg-slate-50/80 px-6 py-16 text-center md:py-24">
+      <section className="relative overflow-hidden border-b border-elite-navy/80 bg-gradient-to-b from-elite-navy to-elite-navy/90 px-6 py-16 text-center md:py-24">
         <div className="mx-auto max-w-3xl">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-amber-600">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-elite-flow">
             Exclusivo para donos de loteadoras e incorporadoras
           </p>
-          <h1 className="mb-6 text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl">
+          <h1 className="mb-6 text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl text-elite-quartz">
             A Estratégia Martech de quem lançou{" "}
-            <span className="text-amber-600">+2.500 Imóveis</span> e esgotou um
+            <span className="text-elite-flow">+2.500 Imóveis</span> e esgotou um
             loteamento em um{" "}
-            <span className="text-amber-600">único dia.</span>
+            <span className="text-elite-glow">único dia.</span>
           </h1>
-          <p className="mb-8 text-lg text-slate-600 md:text-xl">
+          <p className="mb-8 text-lg text-elite-quartz/90 md:text-xl">
             Vou abrir os bastidores de 10 anos de experiência e{" "}
-            <strong>R$ 2 milhões em budget gerenciados</strong> para você
+            <strong className="text-elite-flow">R$ 2 milhões em budget gerenciados</strong> para você
             implementar a máquina de vendas que traz previsibilidade total de
             VGV, eliminando o &quot;achismo&quot; e o desperdício em mídia.
           </p>
-          <p className="mb-8 font-semibold text-slate-700">
+          <p className="mb-8 font-semibold text-elite-quartz/80">
             10/02 • TERÇA-FEIRA • 16:00 —{" "}
             <em>Meet exclusivo: O Método Elite</em>
           </p>
           <Button
             asChild
             size="lg"
-            className="bg-amber-600 px-8 py-6 text-base font-semibold text-white hover:bg-amber-700"
+            className="bg-elite-flow hover:bg-[#009999] px-8 py-6 text-base font-semibold text-white"
           >
             <a href={CTA_URL}>Quero acessar o Método Elite</a>
           </Button>
@@ -48,29 +48,29 @@ export default function EliteLanding() {
       </section>
 
       {/* O que você vai conquistar */}
-      <section className="px-6 py-16 md:py-20">
+      <section className="px-6 py-16 md:py-20 bg-elite-navy/95">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-12 text-center text-2xl font-bold md:text-3xl">
+          <h2 className="mb-12 text-center text-2xl font-bold md:text-3xl text-elite-quartz">
             O que você vai conquistar
           </h2>
           <div className="grid gap-8 md:grid-cols-2">
             <BenefitCard
-              icon={<LucideBarChart2 className="h-8 w-8 text-amber-600" />}
+              icon={<LucideBarChart2 className="h-8 w-8 text-elite-flow" />}
               title="Performance e Lucratividade"
               text="Você vai dominar o retorno sobre seus investimentos, batendo metas de lançamento em tempo recorde (48h) e reduzindo drasticamente o seu CAC através de inteligência de mídia de alta precisão."
             />
             <BenefitCard
-              icon={<LucideLayoutDashboard className="h-8 w-8 text-amber-600" />}
+              icon={<LucideLayoutDashboard className="h-8 w-8 text-elite-flow" />}
               title="Previsibilidade e Dados"
               text="Você terá paz mental com o rastreamento total dos seus investimentos. Chega de achismos: visualize o ROI real unificado e tenha previsibilidade de receita com um funil de dados rastreável."
             />
             <BenefitCard
-              icon={<LucideCog className="h-8 w-8 text-amber-600" />}
+              icon={<LucideCog className="h-8 w-8 text-elite-flow" />}
               title="Sistemas e Automação"
               text="Você vai implementar um ecossistema Martech eficiente e processos que não dependem de talentos individuais para funcionar. Crie uma máquina escalável com réguas de relacionamento automáticas."
             />
             <BenefitCard
-              icon={<LucideHandshake className="h-8 w-8 text-amber-600" />}
+              icon={<LucideHandshake className="h-8 w-8 text-elite-flow" />}
               title="Alinhamento e Crescimento"
               text="Você vai eliminar o conflito entre Marketing e Vendas com um time em total sintonia, aumentando o lucro da sua empresa ao vender com equipe própria e estratégias de otimização."
             />
@@ -79,9 +79,9 @@ export default function EliteLanding() {
       </section>
 
       {/* Para quem é */}
-      <section className="border-y border-slate-200/80 bg-slate-50/50 px-6 py-16 md:py-20">
+      <section className="border-y border-elite-flow/20 bg-elite-navy/90 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">
+          <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl text-elite-quartz">
             Para quem é: Dono de Loteadora
           </h2>
           <ul className="space-y-4">
@@ -93,8 +93,8 @@ export default function EliteLanding() {
               "Você deseja segurança para adquirir novos terrenos e lançar o próximo loteamento, sabendo que possui uma máquina de demanda represada capaz de vender 30% das unidades logo no primeiro dia.",
             ].map((item, i) => (
               <li key={i} className="flex gap-3">
-                <LucideCheck className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
-                <span className="text-slate-700">{item}</span>
+                <LucideCheck className="mt-0.5 h-5 w-5 shrink-0 text-elite-flow" />
+                <span className="text-elite-quartz/90">{item}</span>
               </li>
             ))}
           </ul>
@@ -102,14 +102,14 @@ export default function EliteLanding() {
       </section>
 
       {/* Para quem NÃO é */}
-      <section className="px-6 py-16 md:py-20">
+      <section className="px-6 py-16 md:py-20 bg-elite-navy">
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-6 text-center text-2xl font-bold text-slate-800 md:text-3xl">
+          <h2 className="mb-6 text-center text-2xl font-bold text-elite-quartz md:text-3xl">
             Para quem NÃO é
           </h2>
-          <div className="flex flex-col items-center gap-4 rounded-xl border border-slate-200 bg-slate-50 p-8 text-center">
-            <LucideX className="h-10 w-10 text-slate-400" />
-            <p className="text-slate-700">
+          <div className="flex flex-col items-center gap-4 rounded-xl border border-elite-flow/20 bg-elite-navy/80 p-8 text-center">
+            <LucideX className="h-10 w-10 text-elite-quartz/60" />
+            <p className="text-elite-quartz/90">
               Este programa não é para donos de loteadoras que buscam atalhos
               mágicos ou sorte, que não estão dispostos a integrar tecnologia
               (Martech) ao comercial e que preferem continuar tomando decisões
@@ -121,27 +121,27 @@ export default function EliteLanding() {
       </section>
 
       {/* O Estrategista */}
-      <section className="border-t border-slate-200/80 bg-slate-50/50 px-6 py-16 md:py-20">
+      <section className="border-t border-elite-flow/20 bg-elite-navy/90 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+          <h2 className="mb-6 text-2xl font-bold md:text-3xl text-elite-quartz">
             O Estrategista por trás do Método Elite
           </h2>
-          <p className="mb-8 text-lg text-slate-700">
-            <strong>Rodrigo Ribas</strong> é o founder da Adventure Labs e o nome
+          <p className="mb-8 text-lg text-elite-quartz/90">
+            <strong className="text-elite-quartz">Rodrigo Ribas</strong> é o founder da Adventure Labs e o nome
             por trás de estratégias que moldaram o novo padrão de lançamentos
             imobiliários. Com um perfil raro que une a visão criativa do Design
             à precisão técnica do Martech, ele construiu uma trajetória de 10
             anos dominando dados, tecnologia e comportamento de consumo.
           </p>
-          <p className="mb-10 text-slate-700">
-            Sua experiência consolidada na <strong>Young Empreendimentos</strong>{" "}
+          <p className="mb-10 text-elite-quartz/90">
+            Sua experiência consolidada na <strong className="text-elite-quartz">Young Empreendimentos</strong>{" "}
             permitiu o desenvolvimento de uma metodologia validada no campo de
             batalha. Rodrigo não entrega apenas tráfego; ele entrega inteligência
             de vendas que transforma investimentos em VGV esgotado, garantindo
             que o dono da loteadora tenha controle absoluto sobre cada real
             gerenciado.
           </p>
-          <ul className="mx-auto max-w-xl space-y-3 text-left text-slate-700">
+          <ul className="mx-auto max-w-xl space-y-3 text-left text-elite-quartz/90">
             {[
               "+2.500 imóveis lançados ao mercado com estratégias de alta performance.",
               "Case de Sucesso Absoluto: 100% das unidades vendidas em um único dia.",
@@ -150,7 +150,7 @@ export default function EliteLanding() {
               "Coordenação de 5 grandes lançamentos imobiliários de alto impacto.",
             ].map((item, i) => (
               <li key={i} className="flex gap-3">
-                <LucideCheck className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
+                <LucideCheck className="mt-0.5 h-5 w-5 shrink-0 text-elite-flow" />
                 {item}
               </li>
             ))}
@@ -161,19 +161,19 @@ export default function EliteLanding() {
       {/* CTA final */}
       <section
         id="cta"
-        className="border-t border-slate-200 bg-amber-600 px-6 py-16 text-center text-white md:py-20"
+        className="border-t border-elite-flow/20 bg-elite-flow px-6 py-16 text-center text-white md:py-20"
       >
         <div className="mx-auto max-w-2xl">
           <h2 className="mb-4 text-2xl font-bold md:text-3xl">
             Meet Exclusivo: O Método Elite
           </h2>
-          <p className="mb-8 text-amber-100">
+          <p className="mb-8 text-white/90">
             10/02 • Terça-feira • 16:00
           </p>
           <Button
             asChild
             size="lg"
-            className="border-2 border-white bg-transparent font-semibold text-white hover:bg-white hover:text-amber-700"
+            className="border-2 border-white bg-transparent font-semibold text-white hover:bg-white hover:text-elite-navy"
           >
             <a href={CTA_URL}>Quero acessar o Método Elite</a>
           </Button>
@@ -193,10 +193,10 @@ function BenefitCard({
   text: string;
 }) {
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+    <div className="rounded-xl border border-elite-flow/20 bg-elite-navy/80 p-6 shadow-sm">
       <div className="mb-4">{icon}</div>
-      <h3 className="mb-2 text-lg font-semibold text-slate-900">{title}</h3>
-      <p className="text-slate-600">{text}</p>
+      <h3 className="mb-2 text-lg font-semibold text-elite-quartz">{title}</h3>
+      <p className="text-elite-quartz/80">{text}</p>
     </div>
   );
 }

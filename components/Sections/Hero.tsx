@@ -55,7 +55,7 @@ export function Hero() {
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/ribas-young.jpg"
+                src="/Ribas-Young.png"
                 alt="Rodrigo Ribas - Founder da Adventure Labs"
                 fill
                 className="object-cover"

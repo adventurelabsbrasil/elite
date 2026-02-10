@@ -26,10 +26,10 @@ export const WhatsAppInput = forwardRef<
             ref={ref}
             type="tel"
             placeholder="(00) 00000-0000"
-            className={`w-full px-4 py-3 rounded-lg border ${
+            className={`w-full px-4 py-3 rounded-lg border bg-elite-navy/50 text-elite-quartz placeholder:text-elite-quartz/50 ${
               error
                 ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-                : "border-elite-navy/20 focus:border-elite-flow focus:ring-elite-flow"
+                : "border-elite-flow/30 focus:border-elite-flow focus:ring-elite-flow"
             } focus:outline-none focus:ring-2 transition-colors`}
           />
         )}

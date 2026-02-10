@@ -40,13 +40,13 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 bg-elite-quartz">
+    <section className="py-20 bg-elite-navy/90">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-navy mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-quartz mb-4">
             Perguntas Frequentes
           </h2>
-          <p className="text-xl text-elite-navy/70 max-w-3xl mx-auto">
+          <p className="text-xl text-elite-quartz/80 max-w-3xl mx-auto">
             Tire suas dúvidas sobre o webinar
           </p>
         </div>
@@ -55,25 +55,25 @@ export function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl border border-elite-navy/10 overflow-hidden"
+              className="bg-elite-navy/80 rounded-xl border border-elite-flow/20 overflow-hidden"
             >
               <button
                 onClick={() =>
                   setOpenIndex(openIndex === index ? null : index)
                 }
-                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-elite-quartz/50 transition-colors"
+                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-elite-navy/60 transition-colors"
               >
-                <span className="font-semibold text-elite-navy pr-4">
+                <span className="font-semibold text-elite-quartz pr-4">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`w-5 h-5 text-elite-navy flex-shrink-0 transition-transform ${
+                  className={`w-5 h-5 text-elite-quartz flex-shrink-0 transition-transform ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 />
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-4 text-elite-navy/70 leading-relaxed">
+                <div className="px-6 pb-4 text-elite-quartz/80 leading-relaxed">
                   {faq.answer}
                 </div>
               )}

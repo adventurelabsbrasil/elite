@@ -12,7 +12,7 @@ import { FinalCTA } from "@/components/Sections/FinalCTA";
 
 export default function InscrevaSePage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-elite-navy">
       <Header />
       <Hero />
       <Benefits />
@@ -20,7 +20,7 @@ export default function InscrevaSePage() {
       <About />
       <Problem />
       <Solution />
-      <section id="form" className="py-20 bg-elite-quartz">
+      <section id="form" className="py-20 bg-elite-navy/90">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <QualificationForm />

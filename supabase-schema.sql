@@ -66,3 +66,11 @@ create policy "elite_leads_select_authenticated"
 
 -- Comentário para documentação
 comment on schema elite is 'Dados do produto ELITE (elite.adventurelabs.com.br). Isolado do restante do projeto adventurelabs.';
+
+-- =============================================================================
+-- Admin (opcional): restringir leitura de leads a um único usuário admin
+-- Execute no SQL Editor se quiser que apenas o usuário abaixo acesse o dashboard.
+-- Garanta que o usuário existe em Authentication → Users (id = cd204005-9eaa-4457-88ac-c9aa093d30cd).
+-- =============================================================================
+-- drop policy if exists "elite_leads_select_authenticated" on elite.leads;
+-- create policy "elite_leads_select_admin" on elite.leads for select to authenticated using (auth.uid() = 'cd204005-9eaa-4457-88ac-c9aa093d30cd'::uuid);
