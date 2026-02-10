@@ -54,16 +54,13 @@ export function TargetAudience() {
         </div>
       </section>
 
-      {/* Seção 2: Para quem NÃO é (inimigo em comum) — uma dobra */}
+      {/* Seção 2: Para quem NÃO é — uma dobra */}
       <section className="py-12 lg:py-16 bg-elite-navy/90 min-h-0">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-elite-quartz mb-2">
-              O inimigo em comum
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-elite-quartz">
+              Para quem não é:
             </h2>
-            <p className="text-elite-quartz/80 max-w-2xl mx-auto">
-              O Método ELITE não é para quem prefere sorte e atalhos a sistema e dados.
-            </p>
           </div>
           <div className="max-w-2xl mx-auto space-y-4">
             {commonEnemyItems.map((text, index) => (

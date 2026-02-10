@@ -22,9 +22,6 @@ export default function HomePage() {
         <SectionReveal delay={50}>
           <TargetAudience />
         </SectionReveal>
-        <SectionReveal delay={100}>
-          <About />
-        </SectionReveal>
         <SectionReveal delay={50}>
           <Problem />
         </SectionReveal>
@@ -33,6 +30,9 @@ export default function HomePage() {
         </SectionReveal>
         <SectionReveal delay={50}>
           <FinalCTA />
+        </SectionReveal>
+        <SectionReveal delay={100}>
+          <About />
         </SectionReveal>
         <Footer />
       </main>

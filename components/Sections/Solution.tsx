@@ -1,6 +1,5 @@
 import { Target, Zap } from "lucide-react";
 import { CtaButton } from "@/components/Form/CtaButton";
-import { EliteReveal } from "./EliteReveal";
 
 export function Solution() {
   return (
@@ -14,7 +13,6 @@ export function Solution() {
           </div>
 
           <div className="pt-8 space-y-6 text-left">
-            <EliteReveal />
             <p className="text-elite-quartz/80 leading-relaxed">
               O ELITE atua como o <strong>cérebro digital</strong> da
               loteadora. Ele integra todas as ferramentas de Martech para
