@@ -31,7 +31,7 @@ export function TargetAudience() {
               return (
                 <div
                   key={index}
-                  className="flex items-start gap-4 bg-elite-navy/80 rounded-xl p-6 border border-elite-flow/20"
+                  className="flex items-start gap-4 bg-elite-navy/80 rounded-xl p-6 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
                 >
                   <CheckCircle2 className="w-6 h-6 text-elite-flow flex-shrink-0 mt-0.5" />
                   <p className="text-elite-quartz/90 leading-relaxed text-lg">
@@ -52,7 +52,7 @@ export function TargetAudience() {
               🚫 Para quem NÃO é
             </h2>
           </div>
-          <div className="flex items-start gap-4 bg-elite-sold-red/10 rounded-xl p-6 border-2 border-elite-sold-red">
+          <div className="flex items-start gap-4 bg-elite-sold-red/10 rounded-xl p-6 border-2 border-elite-sold-red transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
             <XCircle className="w-8 h-8 text-elite-sold-red flex-shrink-0 mt-0.5" />
             <p className="text-elite-quartz/90 leading-relaxed text-lg">
               <strong className="text-elite-sold-red">

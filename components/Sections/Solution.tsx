@@ -15,11 +15,11 @@ export function Solution() {
           </div>
 
           <div className="pt-8 space-y-6">
-            <div className="bg-elite-navy/50 backdrop-blur-sm rounded-2xl p-8 border border-elite-flow/20">
-              <div className="flex items-start gap-4 mb-4">
+            <div className="bg-elite-navy/50 backdrop-blur-sm rounded-2xl p-8 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+              <div className="flex items-center gap-4 mb-4">
                 <Brain className="w-8 h-8 text-elite-flow flex-shrink-0" />
                 <div>
-                  <h3 className="text-2xl font-display font-semibold mb-2">
+                  <h3 className="text-2xl font-display font-semibold text-elite-quartz">
                     Método PRIME
                   </h3>
                   <p className="text-elite-quartz/90 text-lg">
@@ -37,11 +37,13 @@ export function Solution() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-elite-navy/50 backdrop-blur-sm rounded-xl p-6 border border-elite-flow/20">
-                <Target className="w-8 h-8 text-elite-glow mb-4" />
-                <h4 className="text-xl font-display font-semibold mb-2">
-                  Transformação Completa
-                </h4>
+              <div className="bg-elite-navy/50 backdrop-blur-sm rounded-xl p-6 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+                <div className="flex items-center gap-4 mb-3">
+                  <Target className="w-8 h-8 text-elite-glow flex-shrink-0" />
+                  <h4 className="text-xl font-display font-semibold text-elite-quartz">
+                    Transformação Completa
+                  </h4>
+                </div>
                 <p className="text-elite-quartz/80">
                   Transformamos sua loteadora em uma máquina de vendas
                   previsível, onde cada real investido é rastreado e cada lead é
@@ -49,11 +51,13 @@ export function Solution() {
                 </p>
               </div>
 
-              <div className="bg-elite-navy/50 backdrop-blur-sm rounded-xl p-6 border border-elite-flow/20">
-                <Zap className="w-8 h-8 text-elite-glow mb-4" />
-                <h4 className="text-xl font-display font-semibold mb-2">
-                  Alinhamento Total
-                </h4>
+              <div className="bg-elite-navy/50 backdrop-blur-sm rounded-xl p-6 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+                <div className="flex items-center gap-4 mb-3">
+                  <Zap className="w-8 h-8 text-elite-glow flex-shrink-0" />
+                  <h4 className="text-xl font-display font-semibold text-elite-quartz">
+                    Alinhamento Total
+                  </h4>
+                </div>
                 <p className="text-elite-quartz/80">
                   Marketing e Vendas jogam no mesmo time para bater as metas de
                   VGV e esgotar o lançamento no prazo.

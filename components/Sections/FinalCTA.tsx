@@ -1,6 +1,11 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
+import { useFormModal } from "@/components/Form/FormModal";
 
 export function FinalCTA() {
+  const { openForm } = useFormModal();
+
   return (
     <section className="py-20 bg-gradient-to-br from-elite-navy to-elite-navy/90 text-elite-quartz">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -12,13 +17,14 @@ export function FinalCTA() {
             Garanta sua vaga no meet exclusivo e descubra como implementar o
             método ELITE na sua operação. Vagas limitadas.
           </p>
-          <a
-            href="#form"
+          <button
+            type="button"
+            onClick={openForm}
             className="inline-flex items-center gap-2 bg-elite-cta hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg ring-2 ring-green-400/50 shadow-[0_0_20px_var(--color-elite-cta-glow)] hover:ring-green-300 hover:shadow-[0_0_24px_var(--color-elite-cta-glow)]"
           >
             QUERO ACESSAR O MÉTODO ELITE
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </button>
         </div>
       </div>
     </section>

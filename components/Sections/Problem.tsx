@@ -47,14 +47,14 @@ export function Problem() {
             return (
               <div
                 key={index}
-                className="p-6 rounded-xl border border-elite-flow/20 bg-elite-navy/80 hover:border-elite-flow/30 transition-colors"
+                className="p-6 rounded-xl border border-elite-sold-red/30 bg-elite-sold-red/5 hover:border-elite-sold-red/50 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-elite-flow/10 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-elite-flow" />
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-elite-sold-red/20 flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-elite-sold-red" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-display font-semibold text-elite-quartz mb-2">
+                    <h3 className="text-xl font-display font-semibold text-elite-sold-red mb-2">
                       {problem.title}
                     </h3>
                     <p className="text-elite-quartz/80">{problem.description}</p>

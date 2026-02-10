@@ -1,6 +1,10 @@
+"use client";
+
 import { Calendar } from "lucide-react";
+import { useFormModal } from "@/components/Form/FormModal";
 
 export function Hero() {
+  const { openForm } = useFormModal();
   return (
     <section className="relative min-h-screen flex items-center justify-center text-elite-quartz pt-20 overflow-hidden">
       {/* Background: loteamento em obras (quase transparente). Coloque public/loteamento-obras.jpg para ativar. */}
@@ -17,26 +21,26 @@ export function Hero() {
         aria-hidden
       />
       <div className="absolute inset-0 bg-elite-navy/85" aria-hidden />
-      <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="w-full">
-              <div className="bg-elite-sold-red py-2.5 px-4 text-center">
+      <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-10 items-center">
+          <div className="space-y-4 md:space-y-5">
+            <div className="flex justify-center lg:justify-start">
+              <div className="bg-elite-sold-red py-2.5 px-5 text-center mx-auto lg:mx-0 max-w-max">
                 <span className="text-white font-semibold text-sm uppercase tracking-wide">
                   Exclusivo para donos de loteadoras e incorporadoras
                 </span>
               </div>
             </div>
 
-            <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-balance leading-tight">
-                A Estratégia Martech de quem lançou{" "}
-                <span className="text-elite-flow">+2.500 Imóveis</span> e Esgotou
-                um Loteamento em um{" "}
-                <span className="text-elite-glow">Único Dia.</span>
+            <div className="space-y-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-balance leading-tight">
+                Eu vou revelar a{" "}
+                <span className="text-elite-flow">Estratégia de Marketing</span> que usei para lançar{" "}
+                <span className="text-elite-glow">+2500 imóveis</span>, com clareza de ROI e vendendo{" "}
+                <span className="text-elite-flow">5x mais rápido</span> que a concorrência.
               </h1>
 
-              <p className="text-xl md:text-2xl text-elite-quartz/90 leading-relaxed">
+              <p className="text-lg md:text-xl text-elite-quartz/90 leading-relaxed">
                 Vou abrir os bastidores de 10 anos de experiência e{" "}
                 <strong className="text-elite-flow">
                   R$ 2 milhões em budget gerenciados
@@ -47,11 +51,11 @@ export function Hero() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3 bg-elite-navy/50 backdrop-blur-sm rounded-xl p-4 border border-elite-flow/20">
-              <Calendar className="w-6 h-6 text-elite-flow flex-shrink-0" />
+            <div className="flex items-center gap-3 bg-elite-navy/50 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-elite-flow/20">
+              <Calendar className="w-5 h-5 md:w-6 md:h-6 text-elite-flow flex-shrink-0" />
               <div>
-                <p className="font-bold text-lg">
-                  10/02 - TERÇA-FEIRA - 16:00
+                <p className="font-bold text-base md:text-lg">
+                  Aula gratuita — Toda terça-feira às 16h
                 </p>
                 <p className="text-sm text-elite-quartz/80 italic">
                   MEET EXCLUSIVO: O MÉTODO ELITE
@@ -59,16 +63,17 @@ export function Hero() {
               </div>
             </div>
 
-            <a
-              href="#form"
-              className="inline-block w-full sm:w-auto bg-elite-cta hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition-colors text-center text-lg ring-2 ring-green-400/50 shadow-[0_0_20px_var(--color-elite-cta-glow)] hover:ring-green-300 hover:shadow-[0_0_24px_var(--color-elite-cta-glow)]"
+            <button
+              type="button"
+              onClick={openForm}
+              className="inline-block w-full sm:w-auto bg-elite-cta hover:bg-green-600 text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-lg transition-colors text-center text-base md:text-lg ring-2 ring-green-400/50 shadow-[0_0_20px_var(--color-elite-cta-glow)] hover:ring-green-300 hover:shadow-[0_0_24px_var(--color-elite-cta-glow)]"
             >
-              QUERO ACESSAR O MÉTODO ELITE
-            </a>
+              Garanta sua vaga gratuita
+            </button>
           </div>
 
-          <div className="relative">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[280px] md:max-w-[320px] aspect-[3/4] max-h-[50vh] lg:max-h-[75vh] rounded-2xl overflow-hidden shadow-2xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/Ribas-Young.png"

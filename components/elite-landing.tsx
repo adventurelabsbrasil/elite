@@ -10,7 +10,7 @@ import {
   LucideX,
 } from "lucide-react";
 
-const CTA_URL = "/inscreva-se"; // formulário de inscrição (Supabase leads)
+const CTA_URL = "/"; // landing com formulário (Supabase leads)
 
 export default function EliteLanding() {
   return (
