@@ -36,7 +36,7 @@ export default function ObrigadoPage() {
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-elite-flow flex-shrink-0 mt-0.5" />
-                <span>O webinar acontece toda terça-feira às 16h (90 minutos)</span>
+                <span>O webinar acontece na terça às 16h (90 minutos). Você receberá o link de acesso por email.</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-elite-flow flex-shrink-0 mt-0.5" />

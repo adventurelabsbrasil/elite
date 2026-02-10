@@ -48,18 +48,26 @@ begin
 end;
 $$ language plpgsql;
 
+drop trigger if exists update_elite_leads_updated_at on elite.leads;
 create trigger update_elite_leads_updated_at
   before update on elite.leads
   for each row
   execute function elite.update_updated_at_column();
 
+-- Permissões: anon precisa USAGE no schema e INSERT na tabela (evita 42501)
+grant usage on schema elite to anon, authenticated;
+grant insert on elite.leads to anon, authenticated;
+grant select on elite.leads to authenticated;
+
 -- RLS: inserção pública (formulário), leitura só autenticados
 alter table elite.leads enable row level security;
 
+drop policy if exists "elite_leads_insert_anon" on elite.leads;
 create policy "elite_leads_insert_anon"
   on elite.leads for insert to anon, authenticated
   with check (true);
 
+drop policy if exists "elite_leads_select_authenticated" on elite.leads;
 create policy "elite_leads_select_authenticated"
   on elite.leads for select to authenticated
   using (true);

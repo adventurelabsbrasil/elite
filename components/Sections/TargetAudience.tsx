@@ -9,65 +9,80 @@ const forWho = [
   "Você deseja segurança para adquirir novos terrenos e lançar o próximo loteamento, sabendo que possui uma máquina de demanda represada capaz de vender 30% das unidades logo no primeiro dia.",
 ];
 
-const notForWho =
-  'Este programa não é para donos de loteadoras que buscam "atalhos mágicos" ou sorte, que não estão dispostos a integrar tecnologia (Martech) ao comercial e que preferem continuar tomando decisões milionárias baseadas apenas no "feeling", ignorando o que os dados do funil dizem.';
+const commonEnemyItems = [
+  "Quem aposta em atalhos e sorte em vez de sistema e dados.",
+  "Quem não quer integrar tecnologia (Martech) ao comercial e prefere decidir por “feeling”.",
+  "Quem ignora o que o funil diz e continua tomando decisões milionárias no escuro.",
+];
 
 export function TargetAudience() {
   return (
-    <section className="py-12 lg:py-16 bg-elite-navy/95 min-h-0">
-      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-          <div>
-            <div className="text-center lg:text-left mb-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-elite-quartz">
-                Para quem é: Dono de Loteadora
-              </h2>
-            </div>
-            <div className="space-y-4">
-              {forWho.map((item, index) => {
-                const parts = item.split("Você");
-                const boldPart = parts[0].trim();
-                const restPart = parts.length > 1 ? `Você${parts[1]}` : "";
-
-                return (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3 bg-elite-navy/80 rounded-xl p-4 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-elite-flow flex-shrink-0 mt-0.5" />
-                    <p className="text-elite-quartz/90 leading-relaxed text-base">
-                      {boldPart && (
-                        <strong className="text-elite-quartz">{boldPart} </strong>
-                      )}
-                      {restPart}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
+    <>
+      {/* Seção 1: Para quem é — uma dobra */}
+      <section className="py-12 lg:py-16 bg-elite-navy/95 min-h-0">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-elite-quartz">
+              Para quem é: Dono de Loteadora
+            </h2>
           </div>
+          <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+            {forWho.map((item, index) => {
+              const parts = item.split("Você");
+              const boldPart = parts[0].trim();
+              const restPart = parts.length > 1 ? `Você${parts[1]}` : "";
 
-          <div>
-            <div className="text-center lg:text-left mb-6">
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-elite-quartz">
-                🚫 Para quem NÃO é
-              </h2>
-            </div>
-            <div className="flex items-start gap-3 bg-elite-sold-red/10 rounded-xl p-4 border-2 border-elite-sold-red transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
-              <XCircle className="w-6 h-6 text-elite-sold-red flex-shrink-0 mt-0.5" />
-              <p className="text-elite-quartz/90 leading-relaxed text-base">
-                <strong className="text-elite-sold-red">
-                  Este programa não é para{" "}
-                </strong>
-                {notForWho.replace("Este programa não é para", "")}
-              </p>
-            </div>
-            <div className="flex justify-center lg:justify-start mt-6">
-              <CtaButton>Esse programa é para mim</CtaButton>
-            </div>
+              return (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 bg-elite-navy/80 rounded-xl p-4 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
+                >
+                  <CheckCircle2 className="w-5 h-5 text-elite-flow flex-shrink-0 mt-0.5" />
+                  <p className="text-elite-quartz/90 leading-relaxed text-sm">
+                    {boldPart && (
+                      <strong className="text-elite-quartz">{boldPart} </strong>
+                    )}
+                    {restPart}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex justify-center mt-8">
+            <CtaButton>Esse programa é para mim</CtaButton>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Seção 2: Para quem NÃO é (inimigo em comum) — uma dobra */}
+      <section className="py-12 lg:py-16 bg-elite-navy/90 min-h-0">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-elite-quartz mb-2">
+              O inimigo em comum
+            </h2>
+            <p className="text-elite-quartz/80 max-w-2xl mx-auto">
+              O Método ELITE não é para quem prefere sorte e atalhos a sistema e dados.
+            </p>
+          </div>
+          <div className="max-w-2xl mx-auto space-y-4">
+            {commonEnemyItems.map((text, index) => (
+              <div
+                key={index}
+                className="flex items-start gap-3 bg-elite-sold-red/10 rounded-xl p-4 border-2 border-elite-sold-red/40 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
+              >
+                <XCircle className="w-5 h-5 text-elite-sold-red flex-shrink-0 mt-0.5" />
+                <p className="text-elite-quartz/90 leading-relaxed text-sm">
+                  {text}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center mt-8">
+            <CtaButton>Quero minha vaga</CtaButton>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

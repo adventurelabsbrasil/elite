@@ -22,16 +22,17 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-elite-navy/85" aria-hidden />
       <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        {/* Tarja em linha própria; abaixo, headline e foto alinhados pelo topo */}
+        <div className="flex justify-center w-full mb-6 lg:mb-8">
+          <div className="bg-elite-sold-red py-2.5 px-5 text-center w-full max-w-max mx-auto">
+            <span className="text-white font-semibold text-sm uppercase tracking-wide">
+              Exclusivo para donos de loteadoras e incorporadoras
+            </span>
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-10 items-start">
           <div className="space-y-4 md:space-y-5">
-            <div className="flex justify-center w-full">
-              <div className="bg-elite-sold-red py-2.5 px-5 text-center w-full max-w-max mx-auto">
-                <span className="text-white font-semibold text-sm uppercase tracking-wide">
-                  Exclusivo para donos de loteadoras e incorporadoras
-                </span>
-              </div>
-            </div>
-
             <div className="space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-balance leading-tight">
                 Eu vou revelar a{" "}
