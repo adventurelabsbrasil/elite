@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   title: "Método Elite | Estratégia Martech para Loteadoras",
   description:
     "A Estratégia Martech de quem lançou +2.500 Imóveis e esgotou um loteamento em um único dia. Meet exclusivo 10/02.",
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+  },
 };
 
 export default function RootLayout({

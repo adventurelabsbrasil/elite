@@ -33,9 +33,10 @@ export function About() {
               <p className="text-base text-elite-quartz/90 leading-relaxed">
                 é o founder da{" "}
                 <strong className="text-elite-quartz">Adventure Labs</strong> e o
-                nome por trás de estratégias que moldaram o novo padrão de
-                lançamentos imobiliários. Com um perfil raro que une a visão
-                criativa do Design à precisão técnica do Martech, ele construiu
+                nome por trás de estratégias que moldaram o novo padrão de{" "}
+                <strong className="text-elite-flow">lançamentos imobiliários</strong>. Com um perfil raro que une a visão
+                criativa do Design à precisão técnica do{" "}
+                <strong className="text-elite-flow">Martech</strong>, ele construiu
                 uma trajetória de 10 anos dominando dados, tecnologia e
                 comportamento de consumo.
               </p>
@@ -46,9 +47,9 @@ export function About() {
                 </strong>{" "}
                 permitiu o desenvolvimento de uma metodologia validada no
                 &quot;campo de batalha&quot;. Rodrigo não entrega apenas
-                tráfego; ele entrega inteligência de vendas que transforma
-                investimentos em VGV esgotado, garantindo que o dono da
-                loteadora tenha controle absoluto sobre cada real gerenciado.
+                tráfego; ele entrega <strong className="text-elite-flow">inteligência de vendas</strong> que transforma
+                investimentos em VGV real, garantindo que o dono da
+                loteadora tenha muito mais controle sobre cada real gerenciado.
               </p>
 
               <div className="pt-4 border-t border-elite-flow/20">
@@ -66,6 +67,18 @@ export function About() {
               </div>
               <div className="flex justify-center md:justify-start pt-4">
                 <CtaButton>Quero minha vaga</CtaButton>
+              </div>
+
+              <div className="pt-8 mt-8 border-t border-elite-flow/10">
+                <p className="text-xs text-elite-quartz/60 mb-3 uppercase tracking-wider">Parcerias e resultados</p>
+                <div className="relative w-full max-w-sm aspect-[16/10] rounded-lg overflow-hidden bg-elite-navy/50">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/partnership.png"
+                    alt="Parcerias e colaborações profissionais"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
               </div>
             </div>
           </div>

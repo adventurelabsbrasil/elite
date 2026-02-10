@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import { BackToTop } from "./BackToTop";
 
@@ -14,16 +13,9 @@ export function Footer() {
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 pb-8 border-b border-elite-flow/20">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-              <div className="flex items-center gap-3">
-                <Image
-                  src="/Isotipo.png"
-                  alt="Adventure Labs"
-                  width={40}
-                  height={40}
-                  className="h-10 w-10 object-contain"
-                />
+              <div>
                 <span className="text-lg font-semibold text-elite-quartz">
-                  adventure <span className="text-elite-flow">LABS</span>
+                  Loteadora <span className="text-elite-flow">ELITE</span>
                 </span>
               </div>
               <div className="grid sm:grid-cols-2 gap-6 text-sm text-elite-quartz/90">

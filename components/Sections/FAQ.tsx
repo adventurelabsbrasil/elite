@@ -12,7 +12,7 @@ const faqs = [
   {
     question: "Quando será realizado?",
     answer:
-      "O webinar acontece toda terça-feira às 16h. Você receberá o link de acesso por email após se inscrever.",
+      "O webinar acontece na terça às 16h. Você receberá o link de acesso por email após se inscrever.",
   },
   {
     question: "Preciso ter conhecimento prévio?",

@@ -56,7 +56,7 @@ export function Hero() {
               <Calendar className="w-5 h-5 md:w-6 md:h-6 text-elite-flow flex-shrink-0" />
               <div>
                 <p className="font-bold text-base md:text-lg">
-                  Aula gratuita — Toda terça às 16h (vagas limitadas)
+                  Aula gratuita — Terça às 16h (vagas limitadas)
                 </p>
                 <p className="text-sm text-elite-quartz/80 italic">
                   MEET EXCLUSIVO: O MÉTODO ELITE

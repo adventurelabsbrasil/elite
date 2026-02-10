@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Target, Zap } from "lucide-react";
 import { CtaButton } from "@/components/Form/CtaButton";
 
@@ -6,7 +7,14 @@ export function Solution() {
     <section className="py-20 bg-gradient-to-br from-elite-navy to-elite-navy/90 text-elite-quartz">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="space-y-4">
+          <div className="flex flex-col items-center gap-4">
+            <Image
+              src="/Mono_Light.png"
+              alt="Método ELITE"
+              width={160}
+              height={52}
+              className="h-12 md:h-14 w-auto opacity-95"
+            />
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-balance">
               A Solução: Método <span className="text-elite-flow">ELITE</span>
             </h2>
