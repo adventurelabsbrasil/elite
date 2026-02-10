@@ -51,6 +51,10 @@ Ao preencher e enviar o form nessa URL, o lead ficará com `source=google`, `med
 
 Dashboard de leads: `/admin` (protegido por login Supabase). Para restringir acesso a um único admin, ver instruções no final de `supabase-schema.sql` (seção "Admin (opcional)").
 
+## Imagem de fundo (Hero)
+
+Para exibir a imagem de loteamento em obras ao fundo da seção Hero (quase transparente), coloque o arquivo em **`public/loteamento-obras.jpg`** (ou `.webp`). Se o arquivo não existir, o Hero usa apenas o fundo navy.
+
 ## Deploy (Vercel)
 
 Variáveis de ambiente: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Ver `docs/SUPABASE_ELITE.md` para schema e domínio.

@@ -1,16 +1,31 @@
-import Image from "next/image";
 import { Calendar } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-elite-navy via-elite-navy to-elite-navy/90 text-elite-quartz pt-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section className="relative min-h-screen flex items-center justify-center text-elite-quartz pt-20 overflow-hidden">
+      {/* Background: loteamento em obras (quase transparente). Coloque public/loteamento-obras.jpg para ativar. */}
+      <div
+        className="absolute inset-0 bg-elite-navy"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/loteamento-obras.jpg')",
+          opacity: 0.2,
+        }}
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-elite-navy/85" aria-hidden />
+      <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <div className="inline-block">
-              <span className="px-4 py-2 bg-elite-flow/20 text-elite-flow rounded-full text-sm font-semibold border border-elite-flow/30">
-                EXCLUSIVO PARA DONOS DE LOTEADORAS E INCORPORADORAS
-              </span>
+            <div className="w-full">
+              <div className="bg-elite-sold-red py-2.5 px-4 text-center">
+                <span className="text-white font-semibold text-sm uppercase tracking-wide">
+                  Exclusivo para donos de loteadoras e incorporadoras
+                </span>
+              </div>
             </div>
 
             <div className="space-y-6">
@@ -46,7 +61,7 @@ export function Hero() {
 
             <a
               href="#form"
-              className="inline-block w-full sm:w-auto bg-elite-flow hover:bg-[#009999] text-white font-bold py-4 px-8 rounded-lg transition-colors text-center text-lg"
+              className="inline-block w-full sm:w-auto bg-elite-cta hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition-colors text-center text-lg ring-2 ring-green-400/50 shadow-[0_0_20px_var(--color-elite-cta-glow)] hover:ring-green-300 hover:shadow-[0_0_24px_var(--color-elite-cta-glow)]"
             >
               QUERO ACESSAR O MÉTODO ELITE
             </a>
@@ -54,12 +69,12 @@ export function Hero() {
 
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/Ribas-Young.png"
                 alt="Rodrigo Ribas - Founder da Adventure Labs"
-                fill
-                className="object-cover"
-                priority
+                className="absolute inset-0 w-full h-full object-cover"
+                fetchPriority="high"
               />
             </div>
           </div>

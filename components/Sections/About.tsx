@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 
 const highlights = [
@@ -12,7 +11,7 @@ const highlights = [
 export function About() {
   return (
     <section className="py-20 bg-elite-navy/90">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-quartz mb-4">
@@ -23,11 +22,11 @@ export function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/ribas-young.jpg"
                   alt="Rodrigo Ribas - Founder da Adventure Labs"
-                  fill
-                  className="object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
             </div>

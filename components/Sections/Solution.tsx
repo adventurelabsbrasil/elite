@@ -3,7 +3,7 @@ import { Brain, Target, Zap } from "lucide-react";
 export function Solution() {
   return (
     <section className="py-20 bg-gradient-to-br from-elite-navy to-elite-navy/90 text-elite-quartz">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-balance">

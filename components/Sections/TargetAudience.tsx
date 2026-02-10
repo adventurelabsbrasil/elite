@@ -14,7 +14,7 @@ const notForWho =
 export function TargetAudience() {
   return (
     <section className="py-20 bg-elite-navy/95">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-quartz mb-4">
@@ -52,10 +52,10 @@ export function TargetAudience() {
               🚫 Para quem NÃO é
             </h2>
           </div>
-          <div className="flex items-start gap-4 bg-elite-navy/80 rounded-xl p-6 border border-elite-sold-red/30">
-            <XCircle className="w-6 h-6 text-elite-sold-red flex-shrink-0 mt-0.5" />
+          <div className="flex items-start gap-4 bg-elite-sold-red/10 rounded-xl p-6 border-2 border-elite-sold-red">
+            <XCircle className="w-8 h-8 text-elite-sold-red flex-shrink-0 mt-0.5" />
             <p className="text-elite-quartz/90 leading-relaxed text-lg">
-              <strong className="text-elite-quartz">
+              <strong className="text-elite-sold-red">
                 Este programa não é para{" "}
               </strong>
               {notForWho.replace("Este programa não é para", "")}

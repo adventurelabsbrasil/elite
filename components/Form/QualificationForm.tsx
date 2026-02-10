@@ -179,15 +179,15 @@ export function QualificationForm() {
       </div>
 
       {submitError && (
-        <div className="p-4 rounded-lg bg-red-50 border border-red-200">
-          <p className="text-sm text-red-600">{submitError}</p>
+        <div className="p-4 rounded-lg bg-red-950/40 border border-red-500/50">
+          <p className="text-sm text-red-400">{submitError}</p>
         </div>
       )}
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-elite-flow hover:bg-[#009999] text-white font-semibold py-4 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full bg-elite-cta hover:bg-green-600 text-white font-semibold py-4 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 ring-2 ring-green-400/50 shadow-[0_0_20px_var(--color-elite-cta-glow)] hover:ring-green-300 hover:shadow-[0_0_24px_var(--color-elite-cta-glow)]"
       >
         {isSubmitting ? (
           <>

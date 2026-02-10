@@ -18,9 +18,11 @@ export default function EliteLanding() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-elite-navy/80 bg-gradient-to-b from-elite-navy to-elite-navy/90 px-6 py-16 text-center md:py-24">
         <div className="mx-auto max-w-3xl">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-elite-flow">
-            Exclusivo para donos de loteadoras e incorporadoras
-          </p>
+          <div className="mb-6 bg-elite-sold-red py-2.5 px-4 text-center">
+            <p className="text-white text-sm font-semibold uppercase tracking-wide">
+              Exclusivo para donos de loteadoras e incorporadoras
+            </p>
+          </div>
           <h1 className="mb-6 text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl text-elite-quartz">
             A Estratégia Martech de quem lançou{" "}
             <span className="text-elite-flow">+2.500 Imóveis</span> e esgotou um
@@ -40,7 +42,7 @@ export default function EliteLanding() {
           <Button
             asChild
             size="lg"
-            className="bg-elite-flow hover:bg-[#009999] px-8 py-6 text-base font-semibold text-white"
+            className="bg-elite-cta hover:bg-green-600 px-8 py-6 text-base font-semibold text-white ring-2 ring-green-400/50 shadow-[0_0_20px_var(--color-elite-cta-glow)] hover:ring-green-300 hover:shadow-[0_0_24px_var(--color-elite-cta-glow)]"
           >
             <a href={CTA_URL}>Quero acessar o Método Elite</a>
           </Button>
@@ -107,8 +109,8 @@ export default function EliteLanding() {
           <h2 className="mb-6 text-center text-2xl font-bold text-elite-quartz md:text-3xl">
             Para quem NÃO é
           </h2>
-          <div className="flex flex-col items-center gap-4 rounded-xl border border-elite-flow/20 bg-elite-navy/80 p-8 text-center">
-            <LucideX className="h-10 w-10 text-elite-quartz/60" />
+          <div className="flex flex-col items-center gap-4 rounded-xl border-2 border-elite-sold-red bg-elite-sold-red/10 p-8 text-center">
+            <LucideX className="h-10 w-10 text-elite-sold-red" />
             <p className="text-elite-quartz/90">
               Este programa não é para donos de loteadoras que buscam atalhos
               mágicos ou sorte, que não estão dispostos a integrar tecnologia
@@ -173,7 +175,7 @@ export default function EliteLanding() {
           <Button
             asChild
             size="lg"
-            className="border-2 border-white bg-transparent font-semibold text-white hover:bg-white hover:text-elite-navy"
+            className="bg-elite-cta hover:bg-green-600 font-semibold text-white ring-2 ring-green-400/50 shadow-[0_0_20px_var(--color-elite-cta-glow)] hover:ring-green-300 hover:shadow-[0_0_24px_var(--color-elite-cta-glow)]"
           >
             <a href={CTA_URL}>Quero acessar o Método Elite</a>
           </Button>

@@ -30,7 +30,7 @@ const benefits = [
 export function Benefits() {
   return (
     <section className="py-20 bg-elite-navy/95">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-quartz mb-4">
             🏆 O que você vai conquistar
