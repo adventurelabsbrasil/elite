@@ -68,18 +68,6 @@ export function About() {
               <div className="flex justify-center md:justify-start pt-4">
                 <CtaButton>Quero minha vaga</CtaButton>
               </div>
-
-              <div className="pt-8 mt-8 border-t border-elite-flow/10">
-                <p className="text-xs text-elite-quartz/60 mb-3 uppercase tracking-wider">Parcerias e resultados</p>
-                <div className="relative w-full max-w-sm aspect-[16/10] rounded-lg overflow-hidden bg-elite-navy/50">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/partnership.png"
-                    alt="Parcerias e colaborações profissionais"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </div>

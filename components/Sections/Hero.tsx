@@ -74,11 +74,11 @@ export function Hero() {
           </div>
 
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[280px] md:max-w-[320px] aspect-[3/4] max-h-[50vh] lg:max-h-[75vh] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full max-w-[320px] md:max-w-[380px] aspect-[4/3] max-h-[50vh] lg:max-h-[70vh] rounded-2xl overflow-hidden shadow-2xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/Ribas-Young.png"
-                alt="Rodrigo Ribas - Founder da Adventure Labs"
+                src="/partnership.png"
+                alt="Parcerias e colaboração profissional - Método ELITE"
                 className="absolute inset-0 w-full h-full object-cover"
                 fetchPriority="high"
               />

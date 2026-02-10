@@ -6,18 +6,28 @@ export function Solution() {
   return (
     <section className="py-20 bg-gradient-to-br from-elite-navy to-elite-navy/90 text-elite-quartz">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="flex flex-col items-center gap-4">
-            <Image
-              src="/Mono_Light.png"
-              alt="Método ELITE"
-              width={160}
-              height={52}
-              className="h-12 md:h-14 w-auto opacity-95"
-            />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-balance">
-              A Solução: Método <span className="text-elite-flow">ELITE</span>
-            </h2>
+        <div className="max-w-5xl mx-auto space-y-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-6 md:gap-10">
+            <div className="relative w-full max-w-[200px] md:max-w-[240px] aspect-[3/4] rounded-xl overflow-hidden shadow-xl mx-auto md:mx-0 flex-shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/Ribas-Young.png"
+                alt="Rodrigo Ribas - Founder da Adventure Labs"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col items-center text-center md:text-left md:items-start gap-4">
+              <Image
+                src="/Mono_Light.png"
+                alt="Método ELITE"
+                width={320}
+                height={104}
+                className="h-24 md:h-28 w-auto opacity-95"
+              />
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-balance">
+                A Solução: Método <span className="text-elite-flow">ELITE</span>
+              </h2>
+            </div>
           </div>
 
           <div className="pt-8 space-y-6 text-left">
