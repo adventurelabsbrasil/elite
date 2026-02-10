@@ -1,4 +1,6 @@
-import { Brain, Target, Zap } from "lucide-react";
+import { Target, Zap } from "lucide-react";
+import { CtaButton } from "@/components/Form/CtaButton";
+import { EliteReveal } from "./EliteReveal";
 
 export function Solution() {
   return (
@@ -9,32 +11,17 @@ export function Solution() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-balance">
               A Solução: Método <span className="text-elite-flow">ELITE</span>
             </h2>
-            <p className="text-xl text-elite-quartz/90">
-              Estratégia de Lançamento Imobiliário com Tecnologia e Escala
-            </p>
           </div>
 
-          <div className="pt-8 space-y-6">
-            <div className="bg-elite-navy/50 backdrop-blur-sm rounded-2xl p-8 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
-              <div className="flex items-center gap-4 mb-4">
-                <Brain className="w-8 h-8 text-elite-flow flex-shrink-0" />
-                <div>
-                  <h3 className="text-2xl font-display font-semibold text-elite-quartz">
-                    Método PRIME
-                  </h3>
-                  <p className="text-elite-quartz/90 text-lg">
-                    Programa Inteligência de Marketing e Escala
-                  </p>
-                </div>
-              </div>
-              <p className="text-elite-quartz/80 leading-relaxed">
-                O ELITE atua como o <strong>cérebro digital</strong> da
-                loteadora. Ele integra todas as ferramentas de Martech para
-                rastrear a jornada do comprador e implementa a cultura de
-                Smarketing, garantindo que nenhum lead seja ignorado e que cada
-                real investido em anúncios tenha um ROI comprovado.
-              </p>
-            </div>
+          <div className="pt-8 space-y-6 text-left">
+            <EliteReveal />
+            <p className="text-elite-quartz/80 leading-relaxed">
+              O ELITE atua como o <strong>cérebro digital</strong> da
+              loteadora. Ele integra todas as ferramentas de Martech para
+              rastrear a jornada do comprador e implementa a cultura de
+              Smarketing, garantindo que nenhum lead seja ignorado e que cada
+              real investido em anúncios tenha um ROI comprovado.
+            </p>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-elite-navy/50 backdrop-blur-sm rounded-xl p-6 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
@@ -63,6 +50,9 @@ export function Solution() {
                   VGV e esgotar o lançamento no prazo.
                 </p>
               </div>
+            </div>
+            <div className="flex justify-center pt-6">
+              <CtaButton>Acessar o Método ELITE</CtaButton>
             </div>
           </div>
         </div>

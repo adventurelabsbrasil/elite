@@ -48,29 +48,34 @@ export function QualificationForm() {
       const supabase = createClient();
       const utmParams = getUTMParams();
 
-      const { error } = await supabase.from("leads").insert({
-        nome: data.nome,
-        email: data.email,
-        whatsapp: data.whatsapp.replace(/\D/g, ""),
-        revenue_range: data.revenue_range,
-        source: utmParams.source,
-        medium: utmParams.medium,
-        campaign: utmParams.campaign,
-      });
+      const { error } = await supabase
+        .schema("elite")
+        .from("leads")
+        .insert({
+          nome: data.nome,
+          email: data.email,
+          whatsapp: data.whatsapp.replace(/\D/g, ""),
+          revenue_range: data.revenue_range,
+          source: utmParams.source,
+          medium: utmParams.medium,
+          campaign: utmParams.campaign,
+        });
 
       if (error) {
+        console.error("[Form] Supabase insert error:", error.code, error.message, error.details);
         if (error.code === "23505") {
           setSubmitError("Este email já está cadastrado.");
         } else {
-          setSubmitError("Erro ao enviar formulário. Tente novamente.");
+          setSubmitError("Erro ao enviar. Tente novamente ou envie um email para contato@adventurelabs.com.br.");
         }
         setIsSubmitting(false);
         return;
       }
 
       window.location.href = "/obrigado";
-    } catch {
-      setSubmitError("Erro ao enviar formulário. Tente novamente.");
+    } catch (err) {
+      console.error("[Form] Submit exception:", err);
+      setSubmitError("Erro ao enviar. Tente novamente ou envie um email para contato@adventurelabs.com.br.");
       setIsSubmitting(false);
     }
   };

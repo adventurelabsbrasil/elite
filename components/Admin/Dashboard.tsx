@@ -21,6 +21,7 @@ export function AdminDashboard() {
     try {
       const supabase = createClient();
       const { data, error } = await supabase
+        .schema("elite")
         .from("leads")
         .select("*")
         .order("created_at", { ascending: false });

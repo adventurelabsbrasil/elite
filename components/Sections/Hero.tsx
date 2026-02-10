@@ -22,10 +22,10 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-elite-navy/85" aria-hidden />
       <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-10 items-center">
+        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-10 items-start">
           <div className="space-y-4 md:space-y-5">
-            <div className="flex justify-center lg:justify-start">
-              <div className="bg-elite-sold-red py-2.5 px-5 text-center mx-auto lg:mx-0 max-w-max">
+            <div className="flex justify-center w-full">
+              <div className="bg-elite-sold-red py-2.5 px-5 text-center w-full max-w-max mx-auto">
                 <span className="text-white font-semibold text-sm uppercase tracking-wide">
                   Exclusivo para donos de loteadoras e incorporadoras
                 </span>
@@ -55,7 +55,7 @@ export function Hero() {
               <Calendar className="w-5 h-5 md:w-6 md:h-6 text-elite-flow flex-shrink-0" />
               <div>
                 <p className="font-bold text-base md:text-lg">
-                  Aula gratuita — Toda terça-feira às 16h
+                  Aula gratuita — Toda terça às 16h (vagas limitadas)
                 </p>
                 <p className="text-sm text-elite-quartz/80 italic">
                   MEET EXCLUSIVO: O MÉTODO ELITE

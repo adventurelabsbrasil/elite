@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import { CtaButton } from "@/components/Form/CtaButton";
 
 const highlights = [
   "+2.500 imóveis lançados ao mercado com estratégias de alta performance.",
@@ -13,13 +14,7 @@ export function About() {
     <section className="py-20 bg-elite-navy/90">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-quartz mb-4">
-              O Estrategista por trás do Método ELITE
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="relative">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -60,7 +55,7 @@ export function About() {
 
               <div className="pt-6 border-t border-elite-flow/20">
                 <h4 className="text-xl font-display font-semibold text-elite-quartz mb-4">
-                  Destaques de Autoridade
+                  Destaques do Estrategista
                 </h4>
                 <ul className="space-y-3">
                   {highlights.map((highlight, index) => (
@@ -70,6 +65,9 @@ export function About() {
                     </li>
                   ))}
                 </ul>
+              </div>
+              <div className="flex justify-center md:justify-start pt-4">
+                <CtaButton>Quero minha vaga</CtaButton>
               </div>
             </div>
           </div>

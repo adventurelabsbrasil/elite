@@ -1,4 +1,5 @@
 import { AlertCircle, TrendingDown, Users, XCircle } from "lucide-react";
+import { CtaButton } from "@/components/Form/CtaButton";
 
 const problems = [
   {
@@ -63,6 +64,9 @@ export function Problem() {
               </div>
             );
           })}
+        </div>
+        <div className="flex justify-center mt-10">
+          <CtaButton>Quero sair dessa situação</CtaButton>
         </div>
       </div>
     </section>

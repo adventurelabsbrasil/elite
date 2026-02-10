@@ -1,4 +1,5 @@
 import { TrendingUp, BarChart3, Cog, Handshake } from "lucide-react";
+import { CtaButton } from "@/components/Form/CtaButton";
 
 const benefits = [
   {
@@ -61,6 +62,9 @@ export function Benefits() {
               </div>
             );
           })}
+        </div>
+        <div className="flex justify-center mt-10">
+          <CtaButton>Quero garantir minha vaga</CtaButton>
         </div>
       </div>
     </section>

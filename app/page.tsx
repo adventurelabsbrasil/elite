@@ -36,6 +36,9 @@ export default function HomePage() {
           <SectionReveal delay={0}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-2xl mx-auto">
+                <p className="text-center text-elite-quartz/90 mb-6">
+                  Aula 100% gratuita. Sem compromisso.
+                </p>
                 <QualificationForm />
               </div>
             </div>

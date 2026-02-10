@@ -1,4 +1,5 @@
 import { CheckCircle2, XCircle } from "lucide-react";
+import { CtaButton } from "@/components/Form/CtaButton";
 
 const forWho = [
   'Você é dono de loteadora e investe alto em mídia, mas sente que está "no escuro" sem saber exatamente qual anúncio ou canal de venda está gerando o ROI real de cada empreendimento.',
@@ -13,53 +14,57 @@ const notForWho =
 
 export function TargetAudience() {
   return (
-    <section className="py-20 bg-elite-navy/95">
+    <section className="py-12 lg:py-16 bg-elite-navy/95 min-h-0">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-quartz mb-4">
-              Para quem é: Dono de Loteadora
-            </h2>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+          <div>
+            <div className="text-center lg:text-left mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-elite-quartz">
+                Para quem é: Dono de Loteadora
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {forWho.map((item, index) => {
+                const parts = item.split("Você");
+                const boldPart = parts[0].trim();
+                const restPart = parts.length > 1 ? `Você${parts[1]}` : "";
+
+                return (
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 bg-elite-navy/80 rounded-xl p-4 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-elite-flow flex-shrink-0 mt-0.5" />
+                    <p className="text-elite-quartz/90 leading-relaxed text-base">
+                      {boldPart && (
+                        <strong className="text-elite-quartz">{boldPart} </strong>
+                      )}
+                      {restPart}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {forWho.map((item, index) => {
-              const parts = item.split("Você");
-              const boldPart = parts[0].trim();
-              const restPart = parts.length > 1 ? `Você${parts[1]}` : "";
-
-              return (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 bg-elite-navy/80 rounded-xl p-6 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
-                >
-                  <CheckCircle2 className="w-6 h-6 text-elite-flow flex-shrink-0 mt-0.5" />
-                  <p className="text-elite-quartz/90 leading-relaxed text-lg">
-                    {boldPart && (
-                      <strong className="text-elite-quartz">{boldPart} </strong>
-                    )}
-                    {restPart}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-elite-quartz mb-4">
-              🚫 Para quem NÃO é
-            </h2>
-          </div>
-          <div className="flex items-start gap-4 bg-elite-sold-red/10 rounded-xl p-6 border-2 border-elite-sold-red transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
-            <XCircle className="w-8 h-8 text-elite-sold-red flex-shrink-0 mt-0.5" />
-            <p className="text-elite-quartz/90 leading-relaxed text-lg">
-              <strong className="text-elite-sold-red">
-                Este programa não é para{" "}
-              </strong>
-              {notForWho.replace("Este programa não é para", "")}
-            </p>
+          <div>
+            <div className="text-center lg:text-left mb-6">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-elite-quartz">
+                🚫 Para quem NÃO é
+              </h2>
+            </div>
+            <div className="flex items-start gap-3 bg-elite-sold-red/10 rounded-xl p-4 border-2 border-elite-sold-red transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+              <XCircle className="w-6 h-6 text-elite-sold-red flex-shrink-0 mt-0.5" />
+              <p className="text-elite-quartz/90 leading-relaxed text-base">
+                <strong className="text-elite-sold-red">
+                  Este programa não é para{" "}
+                </strong>
+                {notForWho.replace("Este programa não é para", "")}
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-start mt-6">
+              <CtaButton>Esse programa é para mim</CtaButton>
+            </div>
           </div>
         </div>
       </div>
