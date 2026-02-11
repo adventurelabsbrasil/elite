@@ -6,7 +6,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
 import { QualificationForm } from "./QualificationForm";
 
@@ -31,12 +30,9 @@ export function FormModalProvider({ children }: { children: React.ReactNode }) {
     <FormModalContext.Provider value={value}>
       {children}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent showClose className="max-w-2xl" aria-describedby="form-modal-desc">
+        <DialogContent showClose className="max-w-2xl" aria-labelledby="form-modal-title">
           <DialogHeader>
-            <DialogTitle>Garanta sua vaga no Método ELITE</DialogTitle>
-            <DialogDescription id="form-modal-desc">
-              Preencha os campos abaixo para garantir sua vaga na aula gratuita.
-            </DialogDescription>
+            <DialogTitle id="form-modal-title">Garanta sua vaga no Método ELITE</DialogTitle>
           </DialogHeader>
           <QualificationForm />
         </DialogContent>

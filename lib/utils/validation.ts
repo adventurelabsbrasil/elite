@@ -17,6 +17,15 @@ export const leadFormSchema = z.object({
     "diretor_comercial",
     "gerente_marketing",
     "gerente_comercial",
+    "outro",
+  ]).optional(),
+  cargo_outro_qual: z.string().max(100).optional(),
+  employee_range: z.enum([
+    "ate-10",
+    "11-50",
+    "51-200",
+    "201-500",
+    "acima-500",
   ]).optional(),
   revenue_range: z.enum([
     "ate-80mil",
@@ -26,6 +35,9 @@ export const leadFormSchema = z.object({
     "500mil-1milhao",
     "acima-1milhao",
   ]),
-});
+}).refine(
+  (data) => data.cargo !== "outro" || (data.cargo_outro_qual?.trim()?.length ?? 0) > 0,
+  { message: "Informe qual é o cargo.", path: ["cargo_outro_qual"] }
+);
 
 export type LeadFormSchema = z.infer<typeof leadFormSchema>;

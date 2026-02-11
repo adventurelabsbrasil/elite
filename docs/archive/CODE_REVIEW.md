@@ -1,6 +1,6 @@
-# Revisão do código – ELITE (Landing + Admin)
+# Revisão do código – ELITE (Landing + Admin) [arquivado]
 
-Revisão da estrutura de rotas, páginas e componentes para uso em produção.
+Revisão da estrutura de rotas, páginas e componentes para uso em produção. Conteúdo incorporado ao README principal.
 
 ---
 
@@ -41,18 +41,13 @@ Revisão da estrutura de rotas, páginas e componentes para uso em produção.
    - Schema `elite` exposto em **Settings → API → Exposed schemas**.  
    - Grants executados (USAGE no schema, INSERT em `elite.leads`). Ver `docs/SUPABASE_FORM_FIX.md` em caso de 42501/401.
 
-3. **Componentes não usados**  
-   - `components/Sections/EliteReveal.tsx` – não importado (acrônimo dinâmico removido). Pode ser apagado se não for reutilizado.  
-   - `components/Sections/FAQ.tsx` – não está na página principal; manter se for usar em outra rota.  
-   - `components/dashboard.tsx` e `components/elite-landing.tsx` – verificar se são legado; remover se não forem referenciados.
-
-4. **Redirect pós-submit**  
+3. **Redirect pós-submit**  
    - Após sucesso, o form redireciona para `/obrigado`. Garantir que `router.push("/obrigado")` (ou equivalente) está sendo chamado no `QualificationForm` após o insert.
 
-5. **Acessibilidade**  
+4. **Acessibilidade**  
    - Dialog do form com `DialogDescription` e `aria-describedby` (já ajustado).
 
-6. **Mobile**  
+5. **Mobile**  
    - Layout pensado primeiro para desktop; revisar breakpoints e toques em telas pequenas quando for prioridade.
 
 ---
@@ -61,4 +56,4 @@ Revisão da estrutura de rotas, páginas e componentes para uso em produção.
 
 - Rotas e estrutura estão **organizadas e prontas para uso**.  
 - Constantes e link do WhatsApp centralizados; background do Hero com imagem leve em `public/`.  
-- Para produção: conferir env vars, Supabase (exposed schema + grants) e remover ou documentar componentes não usados (EliteReveal, FAQ, dashboard/elite-landing) conforme a necessidade do projeto.
+- Para produção: conferir env vars, Supabase (exposed schema + grants).

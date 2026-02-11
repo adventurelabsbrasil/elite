@@ -12,7 +12,15 @@ export type JobLevel =
   | "cmo"
   | "diretor_comercial"
   | "gerente_marketing"
-  | "gerente_comercial";
+  | "gerente_comercial"
+  | "outro";
+
+export type EmployeeRange =
+  | "ate-10"
+  | "11-50"
+  | "51-200"
+  | "201-500"
+  | "acima-500";
 
 export interface Lead {
   id: string;
@@ -20,7 +28,9 @@ export interface Lead {
   email: string;
   whatsapp: string;
   cargo?: JobLevel;
+  cargo_outro_qual?: string;
   revenue_range: RevenueRange;
+  employee_range?: EmployeeRange;
   source?: string;
   medium?: string;
   campaign?: string;
@@ -33,7 +43,9 @@ export interface LeadFormData {
   email: string;
   whatsapp: string;
   cargo?: JobLevel;
+  cargo_outro_qual?: string;
   revenue_range: RevenueRange;
+  employee_range?: EmployeeRange;
 }
 
 export const JOB_LEVELS: { value: JobLevel; label: string }[] = [
@@ -43,6 +55,15 @@ export const JOB_LEVELS: { value: JobLevel; label: string }[] = [
   { value: "diretor_comercial", label: "Diretor Comercial" },
   { value: "gerente_marketing", label: "Gerente de Marketing" },
   { value: "gerente_comercial", label: "Gerente Comercial" },
+  { value: "outro", label: "Outro" },
+];
+
+export const EMPLOYEE_RANGES: { value: EmployeeRange; label: string }[] = [
+  { value: "ate-10", label: "Até 10 funcionários" },
+  { value: "11-50", label: "11 a 50 funcionários" },
+  { value: "51-200", label: "51 a 200 funcionários" },
+  { value: "201-500", label: "201 a 500 funcionários" },
+  { value: "acima-500", label: "Acima de 500 funcionários" },
 ];
 
 export const REVENUE_RANGES: { value: RevenueRange; label: string }[] = [

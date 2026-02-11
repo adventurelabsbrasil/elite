@@ -13,20 +13,10 @@ export function About() {
   return (
     <section className="py-12 lg:py-16 bg-elite-navy/90">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-[auto_1fr] gap-8 lg:gap-10 items-start text-center md:text-left">
-            <div className="relative flex-shrink-0 w-full max-w-[280px] lg:max-w-[320px] mx-auto md:mx-0">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/partnership.png"
-                  alt="Parcerias e colaboração profissional - Método ELITE"
-                  className="absolute inset-0 w-full h-full object-contain"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-4 min-w-0 [&_ul]:text-left [&_.border-t]:text-left">
+        <div className="max-w-5xl mx-auto space-y-12 lg:space-y-16">
+          {/* Bloco 1: texto sobre Rodrigo + foto Rodrigo (ribas-young.jpg) */}
+          <div className="grid md:grid-cols-[1fr_auto] gap-8 lg:gap-10 items-start text-center md:text-left">
+            <div className="space-y-4 min-w-0 order-2 md:order-1">
               <h3 className="text-xl lg:text-2xl font-display font-bold text-elite-quartz">
                 Rodrigo Ribas
               </h3>
@@ -51,8 +41,33 @@ export function About() {
                 investimentos em VGV real, garantindo que o dono da
                 loteadora tenha muito mais controle sobre cada real gerenciado.
               </p>
+            </div>
+            <div className="relative flex-shrink-0 w-full max-w-[280px] lg:max-w-[320px] mx-auto md:mx-0 order-1 md:order-2">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/ribas-young.jpg"
+                  alt="Rodrigo Ribas no campo - Método ELITE"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
 
-              <div className="pt-4 border-t border-elite-flow/20">
+          {/* Bloco 2: destaques do estrategista + partnership.png */}
+          <div className="grid md:grid-cols-[auto_1fr] gap-8 lg:gap-10 items-start text-center md:text-left">
+            <div className="relative flex-shrink-0 w-full max-w-[280px] lg:max-w-[320px] mx-auto md:mx-0">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/partnership.png"
+                  alt="Parcerias e colaboração profissional - Método ELITE"
+                  className="absolute inset-0 w-full h-full object-contain"
+                />
+              </div>
+            </div>
+            <div className="space-y-4 min-w-0 [&_ul]:text-left">
+              <div className="pt-0 border-t border-elite-flow/20">
                 <h4 className="text-lg font-display font-semibold text-elite-quartz mb-3">
                   Destaques do Estrategista
                 </h4>

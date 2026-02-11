@@ -1,0 +1,12 @@
+Landing Page com fomrulário de qualificação, área de admin para monitorar relatórios e dashboards de leads e origens
+
+Landing Page
+Formulário contendo: nome, email, whatsapp com ddd, Média de Faturamento do seu negócio (até R$80mil por mês, de R$80mil a R$150mil por mês, de R$150mil a R$300mil por mês, de R$300mil a R$500mil por mês, de R$500mil a R$ 1 milhão por mês, acima de R$ 1 milhão por mês;
+Pagina de obrigado com botão para entrar no grupo vip
+
+exemplo de estrutura de lp: programalucroeliberdade.com.br / 
+
+-
+
+a landing page é detalhando sobre o webinário, uma aula de 90 minutos focado em marketing de loteadora, principalmente em lançamentos
+o webinário irá explorar o método ELITE para incentivar donos de incorporadoras ou diretores comerciais a implementarem um sistema de gestão de marketing eficaz

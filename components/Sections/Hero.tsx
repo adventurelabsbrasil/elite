@@ -39,8 +39,8 @@ export function Hero() {
             <div className="relative w-full max-w-[220px] sm:max-w-[280px] md:max-w-[380px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-elite-navy/30">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/ribas-young.jpg"
-                alt="Rodrigo Ribas - Founder da Adventure Labs"
+                src="/ribas-young-hero.png"
+                alt="Equipe e parcerias - Método ELITE"
                 className="w-full h-full object-cover"
                 fetchPriority="high"
               />

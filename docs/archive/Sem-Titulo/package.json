@@ -1,0 +1,42 @@
+{
+  "name": "loteadora-elite-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "setup": "node scripts/setup.js",
+    "setup:windows": "powershell -ExecutionPolicy Bypass -File scripts/setup-windows.ps1",
+    "setup:supabase": "powershell -ExecutionPolicy Bypass -File scripts/setup-supabase.ps1",
+    "setup:github": "powershell -ExecutionPolicy Bypass -File scripts/setup-github.ps1",
+    "setup:vercel": "powershell -ExecutionPolicy Bypass -File scripts/setup-vercel.ps1"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@supabase/supabase-js": "^2.39.3",
+    "@supabase/ssr": "^0.1.0",
+    "react-hook-form": "^7.51.0",
+    "zod": "^3.22.4",
+    "@hookform/resolvers": "^3.3.4",
+    "react-input-mask": "^2.0.4",
+    "recharts": "^2.12.0",
+    "date-fns": "^3.3.1",
+    "lucide-react": "^0.344.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "@types/react-input-mask": "^3.0.7",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.2.5"
+  }
+}

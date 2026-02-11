@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { Lead, REVENUE_RANGES, JOB_LEVELS } from "@/types/lead";
+import { Lead, REVENUE_RANGES, JOB_LEVELS, EMPLOYEE_RANGES } from "@/types/lead";
 import { LeadsTable } from "./LeadsTable";
 import { Charts } from "./Charts";
 import { LogOut, Download } from "lucide-react";
@@ -43,13 +43,20 @@ export function AdminDashboard() {
 
   const exportToCSV = () => {
     const getRevenueLabel = (v: string) => REVENUE_RANGES.find((r) => r.value === v)?.label || v;
-    const getCargoLabel = (v: string | null | undefined) => (v ? JOB_LEVELS.find((j) => j.value === v)?.label || v : "-");
-    const headers = ["Nome", "Email", "WhatsApp", "Cargo", "Faturamento", "Origem", "Data"];
+    const getCargoLabel = (l: Lead) => {
+      if (!l.cargo) return "-";
+      const label = JOB_LEVELS.find((j) => j.value === l.cargo)?.label || l.cargo;
+      if (l.cargo === "outro" && l.cargo_outro_qual?.trim()) return `${label}: ${l.cargo_outro_qual.trim()}`;
+      return label;
+    };
+    const getEmployeeLabel = (v: string | null | undefined) => EMPLOYEE_RANGES.find((r) => r.value === v)?.label || (v ?? "-");
+    const headers = ["Nome", "Email", "WhatsApp", "Cargo", "Funcionários", "Faturamento", "Origem", "Data"];
     const rows = leads.map((lead) => [
       lead.nome,
       lead.email,
       lead.whatsapp,
-      getCargoLabel(lead.cargo),
+      getCargoLabel(lead),
+      getEmployeeLabel(lead.employee_range),
       getRevenueLabel(lead.revenue_range),
       lead.source || "-",
       new Date(lead.created_at).toLocaleDateString("pt-BR"),

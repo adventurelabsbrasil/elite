@@ -7,7 +7,7 @@ import {
   leadFormSchema,
   type LeadFormSchema,
 } from "@/lib/utils/validation";
-import { REVENUE_RANGES, JOB_LEVELS } from "@/types/lead";
+import { REVENUE_RANGES, JOB_LEVELS, EMPLOYEE_RANGES } from "@/types/lead";
 import { WhatsAppInput } from "./WhatsAppInput";
 import { createClient } from "@/lib/supabase/client";
 import { getUTMParams } from "@/lib/utils/format";
@@ -56,6 +56,8 @@ export function QualificationForm() {
           email: data.email,
           whatsapp: data.whatsapp.replace(/\D/g, ""),
           cargo: data.cargo ?? null,
+          cargo_outro_qual: data.cargo === "outro" ? (data.cargo_outro_qual?.trim() || null) : null,
+          employee_range: data.employee_range ?? null,
           revenue_range: data.revenue_range,
           source: utmParams.source,
           medium: utmParams.medium,
@@ -82,18 +84,8 @@ export function QualificationForm() {
   };
 
   return (
-    <div className="bg-elite-navy/80 rounded-2xl p-8 md:p-10 shadow-xl border border-elite-flow/20">
-    <div className="mb-8">
-      <h3 className="text-2xl md:text-3xl font-display font-bold text-elite-quartz mb-2">
-        QUERO ACESSAR O MÉTODO ELITE
-      </h3>
-      <p className="text-elite-quartz/80">
-        Preencha o formulário abaixo para garantir sua participação no meet
-        exclusivo
-      </p>
-    </div>
-
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <div className="bg-elite-navy/80 rounded-2xl p-6 md:p-8 shadow-xl border border-elite-flow/20">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
       <div>
         <label
           htmlFor="nome"
@@ -174,6 +166,56 @@ export function QualificationForm() {
           {JOB_LEVELS.map((job) => (
             <option key={job.value} value={job.value}>
               {job.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {watch("cargo") === "outro" && (
+        <div>
+          <label
+            htmlFor="cargo_outro_qual"
+            className="block text-sm font-medium text-elite-quartz mb-2"
+          >
+            Qual?
+          </label>
+          <input
+            {...register("cargo_outro_qual")}
+            type="text"
+            id="cargo_outro_qual"
+            className={`w-full px-4 py-3 rounded-lg border ${
+              errors.cargo_outro_qual
+                ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+                : "border-elite-flow/30 bg-elite-navy/50 text-elite-quartz placeholder:text-elite-quartz/50 focus:border-elite-flow focus:ring-elite-flow"
+            } focus:outline-none focus:ring-2 transition-colors`}
+            placeholder="Ex.: Sócio, Coordenador..."
+          />
+          {errors.cargo_outro_qual && (
+            <p className="mt-1 text-sm text-red-500">{errors.cargo_outro_qual.message}</p>
+          )}
+        </div>
+      )}
+
+      <div>
+        <label
+          htmlFor="employee_range"
+          className="block text-sm font-medium text-elite-quartz mb-2"
+        >
+          Número de funcionários na empresa
+        </label>
+        <select
+          {...register("employee_range")}
+          id="employee_range"
+          className={`w-full px-4 py-3 rounded-lg border ${
+            errors.employee_range
+              ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+              : "border-elite-flow/30 bg-elite-navy/50 text-elite-quartz placeholder:text-elite-quartz/50 focus:border-elite-flow focus:ring-elite-flow"
+          } focus:outline-none focus:ring-2 transition-colors`}
+        >
+          <option value="">Selecione uma opção</option>
+          {EMPLOYEE_RANGES.map((range) => (
+            <option key={range.value} value={range.value}>
+              {range.label}
             </option>
           ))}
         </select>

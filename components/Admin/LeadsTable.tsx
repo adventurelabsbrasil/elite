@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Lead, REVENUE_RANGES, JOB_LEVELS } from "@/types/lead";
+import { Lead, REVENUE_RANGES, JOB_LEVELS, EMPLOYEE_RANGES } from "@/types/lead";
 import { formatDate } from "@/lib/utils/format";
 import { Search, Filter } from "lucide-react";
 
@@ -30,9 +30,18 @@ export function LeadsTable({ leads, onRefresh }: LeadsTableProps) {
     return REVENUE_RANGES.find((r) => r.value === value)?.label || value;
   };
 
-  const getCargoLabel = (value: string | null | undefined) => {
+  const getCargoLabel = (lead: Lead) => {
+    if (!lead.cargo) return "-";
+    const label = JOB_LEVELS.find((j) => j.value === lead.cargo)?.label || lead.cargo;
+    if (lead.cargo === "outro" && lead.cargo_outro_qual?.trim()) {
+      return `${label}: ${lead.cargo_outro_qual.trim()}`;
+    }
+    return label;
+  };
+
+  const getEmployeeLabel = (value: string | null | undefined) => {
     if (!value) return "-";
-    return JOB_LEVELS.find((j) => j.value === value)?.label || value;
+    return EMPLOYEE_RANGES.find((r) => r.value === value)?.label || value;
   };
 
   return (
@@ -89,6 +98,9 @@ export function LeadsTable({ leads, onRefresh }: LeadsTableProps) {
                 Cargo
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-elite-navy uppercase tracking-wider">
+                Funcionários
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-elite-navy uppercase tracking-wider">
                 Faturamento
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-elite-navy uppercase tracking-wider">
@@ -103,7 +115,7 @@ export function LeadsTable({ leads, onRefresh }: LeadsTableProps) {
             {filteredLeads.length === 0 ? (
               <tr>
                 <td
-                  colSpan={7}
+                  colSpan={8}
                   className="px-6 py-8 text-center text-elite-navy/50"
                 >
                   Nenhum lead encontrado
@@ -125,7 +137,10 @@ export function LeadsTable({ leads, onRefresh }: LeadsTableProps) {
                     {lead.whatsapp}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-elite-navy/70">
-                    {getCargoLabel(lead.cargo)}
+                    {getCargoLabel(lead)}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-elite-navy/70">
+                    {getEmployeeLabel(lead.employee_range)}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-elite-navy/70">
                     {getRevenueLabel(lead.revenue_range)}

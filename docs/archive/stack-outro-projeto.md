@@ -1,4 +1,8 @@
-# Tech Stack Documentation
+# Tech Stack Documentation (outro projeto – arquivado)
+
+Este documento descreve um **outro produto** (Real Estate Insight Agent), não o ELITE. Mantido em arquivo para referência.
+
+---
 
 ## Project Overview
 This project is a Real Estate Insight Agent that aggregates marketing data and presents it in a dashboard and daily email.
