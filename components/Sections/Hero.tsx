@@ -27,8 +27,8 @@ export function Hero() {
           <div className="bg-elite-sold-red py-2.5 px-5 text-center w-full max-w-max mx-auto">
             <span className="text-white font-semibold text-sm uppercase tracking-wide">
               Exclusivo para{" "}
-              <span className="text-elite-flow font-bold">Dono de Loteadora</span>
-              {" "}e incorporadoras
+              <span className="text-elite-glow font-bold">Dono de Loteadora</span>
+              {" "}que quer acelerar o VGV
             </span>
           </div>
         </div>
@@ -36,7 +36,7 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-4 sm:gap-6 lg:gap-10 items-start">
           {/* Mobile: foto acima. Desktop: foto à direita */}
           <div className="relative flex justify-center lg:order-2 lg:justify-end order-1">
-            <div className="relative w-full max-w-[220px] sm:max-w-[280px] md:max-w-[380px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-elite-navy/30">
+            <div className="relative w-full max-w-[220px] sm:max-w-[260px] lg:max-w-[280px] xl:max-w-[300px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-elite-navy/30">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/ribas-young-hero.png"
@@ -51,7 +51,7 @@ export function Hero() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-balance leading-tight">
                 Eu vou revelar a{" "}
                 <span className="text-elite-flow">Estratégia de Marketing</span> que usei para lançar{" "}
-                <span className="text-elite-glow">+2500 imóveis</span>, com clareza de ROI e vendendo{" "}
+                <span className="text-elite-glow">+2000 imóveis</span>, com clareza de ROI e vendendo{" "}
                 <span className="text-elite-flow">5x mais rápido</span> que a concorrência.
               </h1>
 

@@ -4,30 +4,30 @@ import { CtaButton } from "@/components/Form/CtaButton";
 
 export function Solution() {
   return (
-    <section className="py-20 bg-gradient-to-br from-elite-navy to-elite-navy/90 text-elite-quartz">
-      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 overflow-hidden text-elite-quartz">
+      {/* Background: young-team.avif um pouco mais visível */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/young-team.avif')",
+          opacity: 0.48,
+        }}
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-elite-navy/80" aria-hidden />
+      <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-6 md:space-y-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-4 md:gap-10">
-            <div className="relative w-full max-w-[200px] md:max-w-[240px] aspect-[4/3] rounded-xl overflow-hidden shadow-xl mx-auto md:mx-0 flex-shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/partnership.png"
-                alt="Parcerias e colaboração profissional - Método ELITE"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="flex flex-col items-center text-center md:text-left md:items-start gap-4 w-full">
-              <Image
-                src="/Mono_Light.png"
-                alt="Método ELITE"
-                width={320}
-                height={104}
-                className="h-24 md:h-28 w-auto opacity-95"
-              />
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-balance">
-                A Solução: Método <span className="text-elite-flow">ELITE</span>
-              </h2>
-            </div>
+          <div className="flex flex-col items-center text-center gap-4 w-full">
+            <Image
+              src="/Mono_Light.png"
+              alt="Método ELITE"
+              width={320}
+              height={104}
+              className="h-24 md:h-28 w-auto opacity-95"
+            />
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-balance">
+              A Solução: Método <span className="text-elite-flow">ELITE</span>
+            </h2>
           </div>
 
           <div className="pt-4 md:pt-8 space-y-4 md:space-y-6 text-left">

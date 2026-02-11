@@ -30,18 +30,8 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="relative py-20 bg-elite-navy/95 overflow-hidden">
-      {/* Background: young-team.avif semi-transparent (como na hero) */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/young-team.avif')",
-          opacity: 0.35,
-        }}
-        aria-hidden
-      />
-      <div className="absolute inset-0 bg-elite-navy/85" aria-hidden />
-      <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-elite-navy/95">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-elite-quartz mb-4">
             🏆 O que você vai conquistar

@@ -2,7 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import { CtaButton } from "@/components/Form/CtaButton";
 
 const highlights = [
-  "+2.500 imóveis lançados ao mercado com estratégias de alta performance.",
+  "+2.000 imóveis lançados ao mercado com estratégias de alta performance.",
   "Case de Sucesso Absoluto: 100% das unidades vendidas em um único dia.",
   "Mais de R$ 2 milhões gerenciados em budget de mídia com rastreamento total de ROI.",
   "10 anos de expertise em Martech unindo tecnologia, CRM e processos de vendas.",
@@ -14,7 +14,7 @@ export function About() {
     <section className="py-12 lg:py-16 bg-elite-navy/90">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-12 lg:space-y-16">
-          {/* Bloco 1: texto sobre Rodrigo + foto Rodrigo (ribas-young.jpg) */}
+          {/* Bloco 1: texto sobre Rodrigo + foto Rodrigo (ribas-young.jpg) ao lado */}
           <div className="grid md:grid-cols-[1fr_auto] gap-8 lg:gap-10 items-start text-center md:text-left">
             <div className="space-y-4 min-w-0 order-2 md:order-1">
               <h3 className="text-xl lg:text-2xl font-display font-bold text-elite-quartz">
@@ -42,31 +42,32 @@ export function About() {
                 loteadora tenha muito mais controle sobre cada real gerenciado.
               </p>
             </div>
-            <div className="relative flex-shrink-0 w-full max-w-[280px] lg:max-w-[320px] mx-auto md:mx-0 order-1 md:order-2">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative flex-shrink-0 w-full max-w-[260px] md:max-w-[300px] lg:max-w-[320px] mx-auto md:mx-0 order-1 md:order-2">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl bg-elite-navy/30">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/ribas-young.jpg"
                   alt="Rodrigo Ribas no campo - Método ELITE"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="w-full h-full object-cover"
+                  loading="eager"
                 />
               </div>
             </div>
           </div>
 
-          {/* Bloco 2: destaques do estrategista + partnership.png */}
-          <div className="grid md:grid-cols-[auto_1fr] gap-8 lg:gap-10 items-start text-center md:text-left">
-            <div className="relative flex-shrink-0 w-full max-w-[280px] lg:max-w-[320px] mx-auto md:mx-0">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+          {/* Bloco 2: partnership.png (maior) à esquerda + textos à direita em coluna */}
+          <div className="grid md:grid-cols-[minmax(320px,1fr)_1fr] lg:grid-cols-[minmax(380px,1.1fr)_1fr] gap-8 lg:gap-12 items-start text-center md:text-left">
+            <div className="relative w-full max-w-[360px] md:max-w-none mx-auto md:mx-0">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-elite-navy/20">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/partnership.png"
                   alt="Parcerias e colaboração profissional - Método ELITE"
-                  className="absolute inset-0 w-full h-full object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
-            <div className="space-y-4 min-w-0 [&_ul]:text-left">
+            <div className="space-y-4 min-w-0 [&_ul]:text-left flex flex-col justify-center">
               <div className="pt-0 border-t border-elite-flow/20">
                 <h4 className="text-lg font-display font-semibold text-elite-quartz mb-3">
                   Destaques do Estrategista
@@ -80,7 +81,7 @@ export function About() {
                   ))}
                 </ul>
               </div>
-              <div className="flex justify-center pt-4">
+              <div className="flex justify-center md:justify-start pt-4">
                 <CtaButton>Quero minha vaga</CtaButton>
               </div>
             </div>

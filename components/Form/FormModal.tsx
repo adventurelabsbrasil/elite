@@ -32,7 +32,7 @@ export function FormModalProvider({ children }: { children: React.ReactNode }) {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent showClose className="max-w-2xl" aria-labelledby="form-modal-title">
           <DialogHeader>
-            <DialogTitle id="form-modal-title">Garanta sua vaga no Método ELITE</DialogTitle>
+            <DialogTitle id="form-modal-title">Garanta sua vaga GRATUITA no método ELITE</DialogTitle>
           </DialogHeader>
           <QualificationForm />
         </DialogContent>
