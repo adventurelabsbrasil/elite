@@ -117,42 +117,42 @@ export function PipelineStagesEditor({
   const sorted = [...stages].sort((a, b) => a.sort_order - b.sort_order);
 
   return (
-    <div className="bg-white rounded-xl border border-elite-navy/10 p-6">
-      <h2 className="text-xl font-display font-semibold text-elite-navy mb-2">
+    <div className="bg-gray-800 rounded-xl border border-gray-700 p-6">
+      <h2 className="text-xl font-display font-semibold text-white mb-2">
         Etapas do funil
       </h2>
-      <p className="text-sm text-elite-navy/70 mb-4">
+      <p className="text-sm text-gray-400 mb-4">
         Crie e ordene as etapas. Marque &quot;Conversão Meta&quot; nas etapas em que o lead deve disparar evento para o Meta (ex.: agendou diagnóstico, virou cliente).
       </p>
 
       {error && (
-        <p className="text-sm text-red-600 mb-4 bg-red-50 p-2 rounded">{error}</p>
+        <p className="text-sm text-red-400 mb-4 bg-red-900/30 border border-red-700 p-2 rounded">{error}</p>
       )}
 
       <ul className="space-y-2 mb-6">
         {sorted.map((s, index) => (
           <li
             key={s.id}
-            className="flex items-center gap-2 p-3 rounded-lg border border-elite-navy/10 bg-elite-quartz/30"
+            className="flex items-center gap-2 p-3 rounded-lg border border-gray-600 bg-gray-700/50"
           >
             <div className="flex items-center gap-1">
               <button
                 type="button"
                 onClick={() => moveStage(index, "up")}
                 disabled={index === 0 || saving}
-                className="p-1 rounded hover:bg-elite-navy/10 disabled:opacity-40"
+                className="p-1 rounded hover:bg-gray-600 disabled:opacity-40"
                 aria-label="Subir"
               >
-                <GripVertical className="w-4 h-4 text-elite-navy/60" />
+                <GripVertical className="w-4 h-4 text-gray-400" />
               </button>
               <button
                 type="button"
                 onClick={() => moveStage(index, "down")}
                 disabled={index === sorted.length - 1 || saving}
-                className="p-1 rounded hover:bg-elite-navy/10 disabled:opacity-40"
+                className="p-1 rounded hover:bg-gray-600 disabled:opacity-40"
                 aria-label="Descer"
               >
-                <GripVertical className="w-4 h-4 text-elite-navy/60" />
+                <GripVertical className="w-4 h-4 text-gray-400" />
               </button>
             </div>
 
@@ -162,18 +162,18 @@ export function PipelineStagesEditor({
                   type="text"
                   value={editLabel}
                   onChange={(e) => setEditLabel(e.target.value)}
-                  className="flex-1 min-w-[180px] px-3 py-1.5 border border-elite-navy/20 rounded text-sm"
+                  className="flex-1 min-w-[180px] px-3 py-1.5 border border-gray-600 rounded text-sm bg-gray-700 text-gray-100"
                   placeholder="Nome da etapa"
                 />
                 <select
                   value={editPipe}
                   onChange={(e) => setEditPipe(e.target.value as PipelinePipe)}
-                  className="px-3 py-1.5 border border-elite-navy/20 rounded text-sm bg-white"
+                  className="px-3 py-1.5 border border-gray-600 rounded text-sm bg-gray-700 text-gray-100"
                 >
                   <option value="mkt">Marketing</option>
                   <option value="sales">Vendas</option>
                 </select>
-                <label className="flex items-center gap-1.5 text-sm">
+                <label className="flex items-center gap-1.5 text-sm text-gray-300">
                   <input
                     type="checkbox"
                     checked={editMeta}
@@ -185,33 +185,33 @@ export function PipelineStagesEditor({
                   type="button"
                   onClick={saveEdit}
                   disabled={saving || !editLabel.trim()}
-                  className="px-3 py-1.5 bg-elite-flow text-white rounded text-sm hover:bg-[#009999] disabled:opacity-50"
+                  className="px-3 py-1.5 bg-elite-flow text-white rounded text-sm hover:opacity-90 disabled:opacity-50"
                 >
                   {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : "Salvar"}
                 </button>
                 <button
                   type="button"
                   onClick={cancelEdit}
-                  className="px-3 py-1.5 text-elite-navy/70 rounded text-sm hover:bg-elite-navy/10"
+                  className="px-3 py-1.5 text-gray-400 rounded text-sm hover:bg-gray-600"
                 >
                   Cancelar
                 </button>
               </div>
             ) : (
               <>
-                <span className="flex-1 font-medium text-elite-navy">{s.label}</span>
-                <span className="text-xs px-2 py-0.5 rounded bg-elite-navy/10 text-elite-navy/70">
+                <span className="flex-1 font-medium text-white">{s.label}</span>
+                <span className="text-xs px-2 py-0.5 rounded bg-gray-600 text-gray-300">
                   {s.pipe === "mkt" ? "Marketing" : "Vendas"}
                 </span>
                 {s.meta_conversion && (
-                  <span className="text-xs px-2 py-0.5 rounded bg-green-100 text-green-800">
+                  <span className="text-xs px-2 py-0.5 rounded bg-green-900/50 text-green-300">
                     Conversão Meta
                   </span>
                 )}
                 <button
                   type="button"
                   onClick={() => startEdit(s)}
-                  className="p-1.5 rounded hover:bg-elite-navy/10 text-elite-navy/70"
+                  className="p-1.5 rounded hover:bg-gray-600 text-gray-400"
                   aria-label="Editar"
                 >
                   <Pencil className="w-4 h-4" />
@@ -220,7 +220,7 @@ export function PipelineStagesEditor({
                   type="button"
                   onClick={() => handleDelete(s.id)}
                   disabled={saving}
-                  className="p-1.5 rounded hover:bg-red-50 text-red-600 disabled:opacity-50"
+                  className="p-1.5 rounded hover:bg-red-900/30 text-red-400 disabled:opacity-50"
                   aria-label="Excluir"
                 >
                   <Trash2 className="w-4 h-4" />
@@ -232,23 +232,23 @@ export function PipelineStagesEditor({
       </ul>
 
       {adding ? (
-        <div className="flex flex-wrap items-center gap-2 p-3 rounded-lg border border-elite-flow/30 bg-elite-flow/5">
+        <div className="flex flex-wrap items-center gap-2 p-3 rounded-lg border border-elite-flow/40 bg-elite-flow/10">
           <input
             type="text"
             value={newLabel}
             onChange={(e) => setNewLabel(e.target.value)}
             placeholder="Nome da nova etapa"
-            className="flex-1 min-w-[180px] px-3 py-2 border border-elite-navy/20 rounded text-sm"
+            className="flex-1 min-w-[180px] px-3 py-2 border border-gray-600 rounded text-sm bg-gray-700 text-gray-100"
           />
           <select
             value={newPipe}
             onChange={(e) => setNewPipe(e.target.value as PipelinePipe)}
-            className="px-3 py-2 border border-elite-navy/20 rounded text-sm bg-white"
+            className="px-3 py-2 border border-gray-600 rounded text-sm bg-gray-700 text-gray-100"
           >
             <option value="mkt">Marketing</option>
             <option value="sales">Vendas</option>
           </select>
-          <label className="flex items-center gap-1.5 text-sm">
+          <label className="flex items-center gap-1.5 text-sm text-gray-300">
             <input
               type="checkbox"
               checked={newMeta}
@@ -260,7 +260,7 @@ export function PipelineStagesEditor({
             type="button"
             onClick={handleAdd}
             disabled={saving || !newLabel.trim()}
-            className="px-4 py-2 bg-elite-flow text-white rounded text-sm hover:bg-[#009999] disabled:opacity-50 flex items-center gap-2"
+            className="px-4 py-2 bg-elite-flow text-white rounded text-sm hover:opacity-90 disabled:opacity-50 flex items-center gap-2"
           >
             {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
             Adicionar
@@ -268,7 +268,7 @@ export function PipelineStagesEditor({
           <button
             type="button"
             onClick={() => { setAdding(false); setNewLabel(""); }}
-            className="px-3 py-2 text-elite-navy/70 rounded text-sm hover:bg-elite-navy/10"
+            className="px-3 py-2 text-gray-400 rounded text-sm hover:bg-gray-600"
           >
             Cancelar
           </button>
@@ -277,7 +277,7 @@ export function PipelineStagesEditor({
         <button
           type="button"
           onClick={() => setAdding(true)}
-          className="flex items-center gap-2 px-4 py-2 border border-elite-flow text-elite-flow rounded-lg text-sm font-medium hover:bg-elite-flow/10"
+          className="flex items-center gap-2 px-4 py-2 border border-elite-flow text-elite-flow rounded-lg text-sm font-medium hover:bg-elite-flow/20"
         >
           <Plus className="w-4 h-4" />
           Nova etapa

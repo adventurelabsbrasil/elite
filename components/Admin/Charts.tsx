@@ -145,49 +145,50 @@ export function Charts({ leads }: ChartsProps) {
               className="inline-block w-3 h-3 rounded"
               style={{ backgroundColor: hidden ? "#ccc" : REVENUE_COLORS[r.value] }}
             />
-            <span className={hidden ? "text-gray-400 line-through" : ""}>{r.label}</span>
+            <span className={hidden ? "text-gray-500 line-through" : "text-gray-300"}>{r.label}</span>
           </li>
         );
       })}
     </ul>
   );
 
+  const cardClass = "bg-gray-800 rounded-xl p-6 border border-gray-700";
+  const titleClass = "text-lg font-display font-semibold text-white mb-4";
+  const gridStroke = "#374151";
+  const axisStroke = "#9ca3af";
+
   return (
     <div className="space-y-8">
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl p-6 border border-elite-navy/10">
-          <h3 className="text-lg font-display font-semibold text-elite-navy mb-4">Total de Leads</h3>
+        <div className={cardClass}>
+          <h3 className={titleClass}>Total de Leads</h3>
           <div className="text-4xl font-bold text-elite-flow">{leads.length}</div>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-elite-navy/10">
-          <h3 className="text-lg font-display font-semibold text-elite-navy mb-4">
-            Leads por Semana (Últimas 4)
-          </h3>
+        <div className={cardClass}>
+          <h3 className={titleClass}>Leads por Semana (Últimas 4)</h3>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={weeks}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#F2F4F6" />
-              <XAxis dataKey="week" stroke="#0E1D37" />
-              <YAxis stroke="#0E1D37" />
-              <Tooltip />
+              <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
+              <XAxis dataKey="week" stroke={axisStroke} />
+              <YAxis stroke={axisStroke} />
+              <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px" }} />
               <Bar dataKey="leads" fill="#00BCBC" />
             </BarChart>
           </ResponsiveContainer>
         </div>
       </div>
 
-      {/* Leads diários empilhados por faturamento — legenda clicável */}
-      <div className="bg-white rounded-xl p-6 border border-elite-navy/10">
-        <h3 className="text-lg font-display font-semibold text-elite-navy mb-4">
-          Leads diários por faixa de faturamento
-        </h3>
-        <p className="text-sm text-elite-navy/60 mb-2">Clique na legenda para mostrar ou ocultar uma faixa.</p>
+      <div className={cardClass}>
+        <h3 className={titleClass}>Leads diários por faixa de faturamento</h3>
+        <p className="text-sm text-gray-400 mb-2">Clique na legenda para mostrar ou ocultar uma faixa.</p>
         <ResponsiveContainer width="100%" height={320}>
           <BarChart data={dailyStackedData} margin={{ top: 8, right: 8, left: 8, bottom: 8 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#F2F4F6" />
-            <XAxis dataKey="date" stroke="#0E1D37" />
-            <YAxis stroke="#0E1D37" />
+            <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
+            <XAxis dataKey="date" stroke={axisStroke} />
+            <YAxis stroke={axisStroke} />
             <Tooltip
+              contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px" }}
               formatter={(value, name) => [
                 Number(value ?? 0),
                 REVENUE_RANGES.find((r) => r.value === name)?.label ?? String(name ?? ""),
@@ -209,31 +210,27 @@ export function Charts({ leads }: ChartsProps) {
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl p-6 border border-elite-navy/10">
-          <h3 className="text-lg font-display font-semibold text-elite-navy mb-4">
-            Leads por Campanha (UTM)
-          </h3>
+        <div className={cardClass}>
+          <h3 className={titleClass}>Leads por Campanha (UTM)</h3>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={campaignData} layout="vertical" margin={{ left: 80 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#F2F4F6" />
-              <XAxis type="number" stroke="#0E1D37" />
-              <YAxis dataKey="name" type="category" width={80} stroke="#0E1D37" tick={{ fontSize: 11 }} />
-              <Tooltip />
+              <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
+              <XAxis type="number" stroke={axisStroke} />
+              <YAxis dataKey="name" type="category" width={80} stroke={axisStroke} tick={{ fontSize: 11, fill: "#9ca3af" }} />
+              <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px" }} />
               <Bar dataKey="value" fill="#00BCBC" name="Leads" />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-elite-navy/10">
-          <h3 className="text-lg font-display font-semibold text-elite-navy mb-4">
-            Leads por Medium (UTM)
-          </h3>
+        <div className={cardClass}>
+          <h3 className={titleClass}>Leads por Medium (UTM)</h3>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={mediumData} layout="vertical" margin={{ left: 80 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#F2F4F6" />
-              <XAxis type="number" stroke="#0E1D37" />
-              <YAxis dataKey="name" type="category" width={80} stroke="#0E1D37" tick={{ fontSize: 11 }} />
-              <Tooltip />
+              <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
+              <XAxis type="number" stroke={axisStroke} />
+              <YAxis dataKey="name" type="category" width={80} stroke={axisStroke} tick={{ fontSize: 11, fill: "#9ca3af" }} />
+              <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px" }} />
               <Bar dataKey="value" fill="#FE5009" name="Leads" />
             </BarChart>
           </ResponsiveContainer>
@@ -241,31 +238,27 @@ export function Charts({ leads }: ChartsProps) {
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl p-6 border border-elite-navy/10">
-          <h3 className="text-lg font-display font-semibold text-elite-navy mb-4">
-            Leads por Cargo
-          </h3>
+        <div className={cardClass}>
+          <h3 className={titleClass}>Leads por Cargo</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={cargoData} layout="vertical" margin={{ left: 120 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#F2F4F6" />
-              <XAxis type="number" stroke="#0E1D37" />
-              <YAxis dataKey="name" type="category" width={115} stroke="#0E1D37" tick={{ fontSize: 11 }} />
-              <Tooltip />
-              <Bar dataKey="value" fill="#0E1D37" name="Leads" />
+              <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
+              <XAxis type="number" stroke={axisStroke} />
+              <YAxis dataKey="name" type="category" width={115} stroke={axisStroke} tick={{ fontSize: 11, fill: "#9ca3af" }} />
+              <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px" }} />
+              <Bar dataKey="value" fill="#00BCBC" name="Leads" />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-elite-navy/10">
-          <h3 className="text-lg font-display font-semibold text-elite-navy mb-4">
-            Leads por Tamanho da Empresa
-          </h3>
+        <div className={cardClass}>
+          <h3 className={titleClass}>Leads por Tamanho da Empresa</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={employeeData} layout="vertical" margin={{ left: 120 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#F2F4F6" />
-              <XAxis type="number" stroke="#0E1D37" />
-              <YAxis dataKey="name" type="category" width={115} stroke="#0E1D37" tick={{ fontSize: 11 }} />
-              <Tooltip />
+              <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
+              <XAxis type="number" stroke={axisStroke} />
+              <YAxis dataKey="name" type="category" width={115} stroke={axisStroke} tick={{ fontSize: 11, fill: "#9ca3af" }} />
+              <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px" }} />
               <Bar dataKey="value" fill="#009999" name="Leads" />
             </BarChart>
           </ResponsiveContainer>
@@ -273,25 +266,21 @@ export function Charts({ leads }: ChartsProps) {
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl p-6 border border-elite-navy/10">
-          <h3 className="text-lg font-display font-semibold text-elite-navy mb-4">
-            Leads por Faixa de Faturamento
-          </h3>
+        <div className={cardClass}>
+          <h3 className={titleClass}>Leads por Faixa de Faturamento</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={revenueData} layout="vertical">
-              <CartesianGrid strokeDasharray="3 3" stroke="#F2F4F6" />
-              <XAxis type="number" stroke="#0E1D37" />
-              <YAxis dataKey="name" type="category" width={150} stroke="#0E1D37" />
-              <Tooltip />
+              <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
+              <XAxis type="number" stroke={axisStroke} />
+              <YAxis dataKey="name" type="category" width={150} stroke={axisStroke} tick={{ fill: "#9ca3af" }} />
+              <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px" }} />
               <Bar dataKey="value" fill="#FE5009" />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-6 border border-elite-navy/10">
-          <h3 className="text-lg font-display font-semibold text-elite-navy mb-4">
-            Leads por Origem (Source)
-          </h3>
+        <div className={cardClass}>
+          <h3 className={titleClass}>Leads por Origem (Source)</h3>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
@@ -308,7 +297,7 @@ export function Charts({ leads }: ChartsProps) {
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip />
+              <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px" }} />
             </PieChart>
           </ResponsiveContainer>
         </div>

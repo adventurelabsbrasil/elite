@@ -67,13 +67,13 @@ export function LeadsPipeline({
     return (
       <div
         key={stage.id}
-        className="w-72 flex-shrink-0 rounded-xl border border-elite-navy/10 bg-white/80 p-4"
+        className="w-72 flex-shrink-0 rounded-xl border border-gray-600 bg-gray-800 p-4"
         onDragOver={handleDragOver}
         onDrop={(e) => handleDrop(e, stage.id)}
       >
-        <h3 className="text-sm font-semibold text-elite-navy mb-3 flex items-center justify-between">
+        <h3 className="text-sm font-semibold text-white mb-3 flex items-center justify-between">
           <span>{stage.label}</span>
-          <span className="text-elite-navy/60 font-normal">{leadList.length}</span>
+          <span className="text-gray-400 font-normal">{leadList.length}</span>
         </h3>
         <div className="space-y-2 min-h-[120px]">
           {leadList.map((lead) => (
@@ -81,7 +81,7 @@ export function LeadsPipeline({
               key={lead.id}
               draggable
               onDragStart={(e) => handleDragStart(e, lead.id)}
-              className="rounded-lg border border-elite-navy/10 bg-white p-3 shadow-sm cursor-grab active:cursor-grabbing hover:border-elite-flow/30 transition-colors"
+              className="rounded-lg border border-gray-600 bg-gray-700 p-3 cursor-grab active:cursor-grabbing hover:border-elite-flow/50 transition-colors"
             >
               {updatingLeadId === lead.id ? (
                 <div className="flex items-center justify-center py-4">
@@ -89,20 +89,20 @@ export function LeadsPipeline({
                 </div>
               ) : (
                 <>
-                  <p className="font-medium text-elite-navy truncate">{lead.nome}</p>
-                  <p className="text-xs text-elite-navy/70 truncate mt-0.5">{lead.email}</p>
+                  <p className="font-medium text-gray-100 truncate">{lead.nome}</p>
+                  <p className="text-xs text-gray-400 truncate mt-0.5">{lead.email}</p>
                   {lead.tags && lead.tags.length > 0 && (
                     <div className="flex flex-wrap gap-1 mt-2">
                       {lead.tags.slice(0, 3).map((tag) => (
                         <span
                           key={tag}
-                          className="text-[10px] px-1.5 py-0.5 rounded bg-elite-quartz text-elite-navy/80"
+                          className="text-[10px] px-1.5 py-0.5 rounded bg-gray-600 text-gray-300"
                         >
                           {tag}
                         </span>
                       ))}
                       {lead.tags.length > 3 && (
-                        <span className="text-[10px] text-elite-navy/50">
+                        <span className="text-[10px] text-gray-500">
                           +{lead.tags.length - 3}
                         </span>
                       )}
@@ -119,8 +119,8 @@ export function LeadsPipeline({
 
   if (stages.length === 0) {
     return (
-      <div className="bg-white rounded-xl border border-elite-navy/10 p-8 text-center text-elite-navy/70">
-        Nenhuma etapa do funil. Vá em <strong>Etapas</strong> e crie as etapas.
+      <div className="bg-gray-800 rounded-xl border border-gray-700 p-8 text-center text-gray-400">
+        Nenhuma etapa do funil. Vá em <strong className="text-white">Etapas</strong> e crie as etapas.
       </div>
     );
   }
@@ -139,12 +139,12 @@ export function LeadsPipeline({
           </>
         )}
         {mktStages.length > 0 && salesStages.length > 0 && (
-          <div className="flex-shrink-0 w-px self-stretch bg-elite-navy/20 mx-1" aria-hidden />
+          <div className="flex-shrink-0 w-px self-stretch bg-gray-600 mx-1" aria-hidden />
         )}
         {salesStages.length > 0 && (
           <>
             <div className="flex-shrink-0 w-28 flex items-center justify-center pt-2">
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-elite-navy/70 whitespace-nowrap">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 whitespace-nowrap">
                 Funil Vendas
               </span>
             </div>
