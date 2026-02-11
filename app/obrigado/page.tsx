@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 import { WHATSAPP_GROUP_INVITE } from "@/lib/constants";
+import { ObrigadoPixel } from "@/components/Pixel/ObrigadoPixel";
 
 export const metadata = {
   title: "ELITE - Parabéns pela decisão",
@@ -9,6 +10,7 @@ export const metadata = {
 export default function ObrigadoPage() {
   return (
     <main className="min-h-screen bg-elite-navy flex items-center justify-center py-20 px-4">
+      <ObrigadoPixel />
       <div className="max-w-2xl w-full text-center space-y-8">
         <div className="flex justify-center mb-8">
           <div className="w-20 h-20 rounded-full bg-elite-flow/10 flex items-center justify-center">
