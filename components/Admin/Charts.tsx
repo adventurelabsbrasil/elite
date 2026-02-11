@@ -188,9 +188,9 @@ export function Charts({ leads }: ChartsProps) {
             <XAxis dataKey="date" stroke="#0E1D37" />
             <YAxis stroke="#0E1D37" />
             <Tooltip
-              formatter={(value: number | undefined, name: string) => [
-                value ?? 0,
-                REVENUE_RANGES.find((r) => r.value === name)?.label ?? name,
+              formatter={(value, name) => [
+                Number(value ?? 0),
+                REVENUE_RANGES.find((r) => r.value === name)?.label ?? String(name ?? ""),
               ]}
               labelFormatter={(label) => `Data: ${label}`}
             />

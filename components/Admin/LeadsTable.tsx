@@ -65,8 +65,8 @@ export function LeadsTable({ leads, stages, onRefresh, onStageChange, updatingLe
   const sortedLeads = useMemo(() => {
     const arr = [...filteredLeads];
     arr.sort((a, b) => {
-      let aVal: string | number | undefined = (a as Record<string, unknown>)[sortKey] as string | number | undefined;
-      let bVal: string | number | undefined = (b as Record<string, unknown>)[sortKey] as string | number | undefined;
+      let aVal: string | number | undefined = (a as unknown as Record<string, unknown>)[sortKey] as string | number | undefined;
+      let bVal: string | number | undefined = (b as unknown as Record<string, unknown>)[sortKey] as string | number | undefined;
       if (sortKey === "created_at") {
         aVal = new Date(a.created_at).getTime();
         bVal = new Date(b.created_at).getTime();
