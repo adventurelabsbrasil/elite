@@ -58,9 +58,17 @@ Crie `.env.local` na raiz com essas variáveis. Schema e tabelas: executar `supa
 ## Admin
 
 - **URL de login:** `/admin/login` (ou `/login`, que redireciona).
-- **Credenciais:** usuário criado em **Supabase → Authentication → Users**.
+- **Login:** email/senha (usuário criado em **Supabase → Authentication → Users**) ou **Entrar com Google** (OAuth).
 - **Após login:** acesso a `/admin` (dashboard com tabela de leads, filtros, export CSV e gráficos).
 - **Restringir a um único admin:** ver instruções no final de `supabase-schema.sql` (seção "Admin (opcional)" com RLS por `auth.uid()`).
+
+### Login com Google
+
+1. No **Supabase Dashboard:** Authentication → **Providers** → ative **Google** e preencha Client ID e Client Secret (Google Cloud Console: credenciais OAuth 2.0, tipo "Aplicativo da Web", URL de redirecionamento autorizado: `https://<seu-projeto>.supabase.co/auth/v1/callback`).
+2. Em **Authentication → URL Configuration**, adicione em **Redirect URLs** as URLs do seu app que recebem o callback, por exemplo:
+   - `http://localhost:3000/auth/callback` (dev)
+   - `https://elite.adventurelabs.com.br/auth/callback` (produção)
+3. Na tela de login do admin, use o botão **Entrar com Google**.
 
 ---
 
