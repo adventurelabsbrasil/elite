@@ -48,7 +48,7 @@ export function Problem() {
             return (
               <div
                 key={index}
-                className="p-6 rounded-xl border border-elite-sold-red/30 bg-elite-sold-red/5 hover:border-elite-sold-red/50 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
+                className="p-6 rounded-xl border border-elite-sold-red/30 bg-elite-sold-red/5 hover:border-elite-sold-red/50 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg text-left"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-elite-sold-red/20 flex items-center justify-center">

@@ -14,19 +14,19 @@ export function About() {
     <section className="py-12 lg:py-16 bg-elite-navy/90">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-[auto_1fr] gap-8 lg:gap-10 items-start">
-            <div className="relative flex-shrink-0 w-[200px] lg:w-[220px]">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+          <div className="grid md:grid-cols-[auto_1fr] gap-8 lg:gap-10 items-start text-center md:text-left">
+            <div className="relative flex-shrink-0 w-full max-w-[280px] lg:max-w-[320px] mx-auto md:mx-0">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/ribas-young.jpg"
-                  alt="Rodrigo Ribas - Founder da Adventure Labs"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  src="/partnership.png"
+                  alt="Parcerias e colaboração profissional - Método ELITE"
+                  className="absolute inset-0 w-full h-full object-contain"
                 />
               </div>
             </div>
 
-            <div className="space-y-4 min-w-0">
+            <div className="space-y-4 min-w-0 [&_ul]:text-left [&_.border-t]:text-left">
               <h3 className="text-xl lg:text-2xl font-display font-bold text-elite-quartz">
                 Rodrigo Ribas
               </h3>
@@ -65,7 +65,7 @@ export function About() {
                   ))}
                 </ul>
               </div>
-              <div className="flex justify-center md:justify-start pt-4">
+              <div className="flex justify-center pt-4">
                 <CtaButton>Quero minha vaga</CtaButton>
               </div>
             </div>

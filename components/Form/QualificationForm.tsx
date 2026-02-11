@@ -7,7 +7,7 @@ import {
   leadFormSchema,
   type LeadFormSchema,
 } from "@/lib/utils/validation";
-import { REVENUE_RANGES } from "@/types/lead";
+import { REVENUE_RANGES, JOB_LEVELS } from "@/types/lead";
 import { WhatsAppInput } from "./WhatsAppInput";
 import { createClient } from "@/lib/supabase/client";
 import { getUTMParams } from "@/lib/utils/format";
@@ -55,6 +55,7 @@ export function QualificationForm() {
           nome: data.nome,
           email: data.email,
           whatsapp: data.whatsapp.replace(/\D/g, ""),
+          cargo: data.cargo ?? null,
           revenue_range: data.revenue_range,
           source: utmParams.source,
           medium: utmParams.medium,
@@ -151,6 +152,31 @@ export function QualificationForm() {
           onChange={(value) => setValue("whatsapp", value)}
           error={errors.whatsapp?.message}
         />
+      </div>
+
+      <div>
+        <label
+          htmlFor="cargo"
+          className="block text-sm font-medium text-elite-quartz mb-2"
+        >
+          Nível de cargo
+        </label>
+        <select
+          {...register("cargo")}
+          id="cargo"
+          className={`w-full px-4 py-3 rounded-lg border ${
+            errors.cargo
+              ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+              : "border-elite-flow/30 bg-elite-navy/50 text-elite-quartz placeholder:text-elite-quartz/50 focus:border-elite-flow focus:ring-elite-flow"
+          } focus:outline-none focus:ring-2 transition-colors`}
+        >
+          <option value="">Selecione seu cargo</option>
+          {JOB_LEVELS.map((job) => (
+            <option key={job.value} value={job.value}>
+              {job.label}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div>

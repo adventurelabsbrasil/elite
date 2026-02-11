@@ -44,7 +44,7 @@ export function Benefits() {
             return (
               <div
                 key={index}
-                className="bg-elite-navy/80 rounded-xl p-8 border border-elite-flow/20 shadow-sm hover:border-elite-flow/30 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
+                className="bg-elite-navy/80 rounded-xl p-8 border border-elite-flow/20 shadow-sm hover:border-elite-flow/30 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg text-left"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-elite-flow/10 flex items-center justify-center">

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { Lead } from "@/types/lead";
+import { Lead, REVENUE_RANGES, JOB_LEVELS } from "@/types/lead";
 import { LeadsTable } from "./LeadsTable";
 import { Charts } from "./Charts";
 import { LogOut, Download } from "lucide-react";
@@ -42,12 +42,15 @@ export function AdminDashboard() {
   };
 
   const exportToCSV = () => {
-    const headers = ["Nome", "Email", "WhatsApp", "Faturamento", "Origem", "Data"];
+    const getRevenueLabel = (v: string) => REVENUE_RANGES.find((r) => r.value === v)?.label || v;
+    const getCargoLabel = (v: string | null | undefined) => (v ? JOB_LEVELS.find((j) => j.value === v)?.label || v : "-");
+    const headers = ["Nome", "Email", "WhatsApp", "Cargo", "Faturamento", "Origem", "Data"];
     const rows = leads.map((lead) => [
       lead.nome,
       lead.email,
       lead.whatsapp,
-      lead.revenue_range,
+      getCargoLabel(lead.cargo),
+      getRevenueLabel(lead.revenue_range),
       lead.source || "-",
       new Date(lead.created_at).toLocaleDateString("pt-BR"),
     ]);

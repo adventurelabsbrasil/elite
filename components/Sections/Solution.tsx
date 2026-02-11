@@ -6,17 +6,17 @@ export function Solution() {
   return (
     <section className="py-20 bg-gradient-to-br from-elite-navy to-elite-navy/90 text-elite-quartz">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto space-y-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-6 md:gap-10">
-            <div className="relative w-full max-w-[200px] md:max-w-[240px] aspect-[3/4] rounded-xl overflow-hidden shadow-xl mx-auto md:mx-0 flex-shrink-0">
+        <div className="max-w-5xl mx-auto space-y-6 md:space-y-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-4 md:gap-10">
+            <div className="relative w-full max-w-[200px] md:max-w-[240px] aspect-[4/3] rounded-xl overflow-hidden shadow-xl mx-auto md:mx-0 flex-shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/Ribas-Young.png"
-                alt="Rodrigo Ribas - Founder da Adventure Labs"
-                className="w-full h-full object-cover"
+                src="/partnership.png"
+                alt="Parcerias e colaboração profissional - Método ELITE"
+                className="w-full h-full object-contain"
               />
             </div>
-            <div className="flex flex-col items-center text-center md:text-left md:items-start gap-4">
+            <div className="flex flex-col items-center text-center md:text-left md:items-start gap-4 w-full">
               <Image
                 src="/Mono_Light.png"
                 alt="Método ELITE"
@@ -30,7 +30,7 @@ export function Solution() {
             </div>
           </div>
 
-          <div className="pt-8 space-y-6 text-left">
+          <div className="pt-4 md:pt-8 space-y-4 md:space-y-6 text-left">
             <p className="text-elite-quartz/80 leading-relaxed">
               O ELITE atua como o <strong>cérebro digital</strong> da
               loteadora. Ele integra todas as ferramentas de Martech para
@@ -39,8 +39,8 @@ export function Solution() {
               real investido em anúncios tenha um ROI comprovado.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-elite-navy/50 backdrop-blur-sm rounded-xl p-6 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+              <div className="bg-elite-navy/50 backdrop-blur-sm rounded-xl p-6 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg text-left">
                 <div className="flex items-center gap-4 mb-3">
                   <Target className="w-8 h-8 text-elite-glow flex-shrink-0" />
                   <h4 className="text-xl font-display font-semibold text-elite-quartz">
@@ -54,7 +54,7 @@ export function Solution() {
                 </p>
               </div>
 
-              <div className="bg-elite-navy/50 backdrop-blur-sm rounded-xl p-6 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+              <div className="bg-elite-navy/50 backdrop-blur-sm rounded-xl p-6 border border-elite-flow/20 transition-all duration-200 hover:scale-[1.01] hover:shadow-lg text-left">
                 <div className="flex items-center gap-4 mb-3">
                   <Zap className="w-8 h-8 text-elite-glow flex-shrink-0" />
                   <h4 className="text-xl font-display font-semibold text-elite-quartz">
@@ -67,7 +67,7 @@ export function Solution() {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center pt-6">
+            <div className="flex justify-center pt-4 md:pt-6">
               <CtaButton>Acessar o Método ELITE</CtaButton>
             </div>
           </div>

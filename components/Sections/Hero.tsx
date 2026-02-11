@@ -6,7 +6,7 @@ import { useFormModal } from "@/components/Form/FormModal";
 export function Hero() {
   const { openForm } = useFormModal();
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-elite-quartz pt-20 overflow-hidden">
+    <section className="relative min-h-screen md:min-h-screen flex items-center justify-center text-elite-quartz pt-20 overflow-hidden">
       {/* Background: loteamento em obras (quase transparente). public/loteamento-obras.jpg (~116 KB). */}
       <div
         className="absolute inset-0 bg-elite-navy"
@@ -15,15 +15,15 @@ export function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/loteamento-obras.jpg')",
+          backgroundImage: "url('/bairro-planejado-obras.png')",
           opacity: 0.4,
         }}
         aria-hidden
       />
       <div className="absolute inset-0 bg-elite-navy/65" aria-hidden />
-      <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-16">
         {/* Tarja em linha própria; abaixo, headline e foto alinhados pelo topo */}
-        <div className="flex justify-center w-full mb-6 lg:mb-8">
+        <div className="flex justify-center w-full mb-4 sm:mb-6 lg:mb-8">
           <div className="bg-elite-sold-red py-2.5 px-5 text-center w-full max-w-max mx-auto">
             <span className="text-white font-semibold text-sm uppercase tracking-wide">
               Exclusivo para{" "}
@@ -33,8 +33,20 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-10 items-start">
-          <div className="space-y-4 md:space-y-5">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-4 sm:gap-6 lg:gap-10 items-start">
+          {/* Mobile: foto acima. Desktop: foto à direita */}
+          <div className="relative flex justify-center lg:order-2 lg:justify-end order-1">
+            <div className="relative w-full max-w-[220px] sm:max-w-[280px] md:max-w-[380px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-elite-navy/30">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ribas-young.jpg"
+                alt="Rodrigo Ribas - Founder da Adventure Labs"
+                className="w-full h-full object-cover"
+                fetchPriority="high"
+              />
+            </div>
+          </div>
+          <div className="space-y-3 sm:space-y-4 md:space-y-5 order-2 lg:order-1 text-center lg:text-left">
             <div className="space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-balance leading-tight">
                 Eu vou revelar a{" "}
@@ -54,7 +66,7 @@ export function Hero() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3 bg-elite-navy/50 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-elite-flow/20">
+            <div className="flex items-center justify-center lg:justify-start gap-3 bg-elite-navy/50 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-elite-flow/20">
               <Calendar className="w-5 h-5 md:w-6 md:h-6 text-elite-flow flex-shrink-0" />
               <div>
                 <p className="font-bold text-base md:text-lg">
@@ -73,18 +85,6 @@ export function Hero() {
             >
               Garanta sua vaga gratuita
             </button>
-          </div>
-
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[320px] md:max-w-[380px] min-h-[280px] lg:min-h-[360px] rounded-2xl overflow-hidden shadow-2xl bg-elite-navy/30">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/partnership.png"
-                alt="Parcerias e colaboração profissional - Método ELITE"
-                className="w-full h-full object-contain"
-                fetchPriority="high"
-              />
-            </div>
           </div>
         </div>
       </div>

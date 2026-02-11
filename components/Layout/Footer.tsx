@@ -12,8 +12,8 @@ export function Footer() {
       <footer className="bg-elite-navy text-elite-quartz py-12">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 pb-8 border-b border-elite-flow/20">
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-              <div>
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 text-center md:text-left">
+              <div className="flex justify-center md:justify-start">
                 <span className="text-lg font-semibold text-elite-quartz">
                   Loteadora <span className="text-elite-flow">ELITE</span>
                 </span>
@@ -56,7 +56,7 @@ export function Footer() {
           </div>
           <div className="pt-6 mt-6 border-t border-elite-flow/10">
             <p className="text-xs text-elite-quartz/70 text-center max-w-3xl mx-auto leading-relaxed mb-6">
-              Loteadora Elite não é uma incorporadora, e sim um método validado de lançamento para aceleração de resultados, de autoria de Rodrigo Ribas, ex-Head de Marketing da Young Empreendimentos e fundador sócio-proprietário da Adventure Labs. Todas as comunicações são voltadas exclusivamente para o programa.
+              Loteadora Elite não é uma incorporadora, e sim um método validado de lançamento para aceleração de resultados. Método de autoria de Rodrigo Ribas, Head de Marketing da Young Empreendimentos e fundador sócio-proprietário da Adventure Labs. Todas as comunicações são exclusivamente voltadas ao programa.
             </p>
             <div className="flex justify-center mb-6">
               <a

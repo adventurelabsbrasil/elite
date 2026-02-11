@@ -17,6 +17,14 @@ create table if not exists elite.leads (
   nome text not null,
   email text not null,
   whatsapp text not null,
+  cargo text check (cargo in (
+    'proprietario',
+    'ceo',
+    'cmo',
+    'diretor_comercial',
+    'gerente_marketing',
+    'gerente_comercial'
+  )),
   revenue_range text not null check (revenue_range in (
     'ate-80mil',
     '80mil-150mil',
@@ -38,6 +46,7 @@ create unique index if not exists elite_leads_email_key on elite.leads(email);
 create index if not exists elite_leads_created_at_idx on elite.leads(created_at desc);
 create index if not exists elite_leads_revenue_range_idx on elite.leads(revenue_range);
 create index if not exists elite_leads_source_idx on elite.leads(source);
+create index if not exists elite_leads_cargo_idx on elite.leads(cargo);
 
 -- Função para updated_at (escopo elite)
 create or replace function elite.update_updated_at_column()

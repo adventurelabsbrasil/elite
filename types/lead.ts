@@ -6,11 +6,20 @@ export type RevenueRange =
   | "500mil-1milhao"
   | "acima-1milhao";
 
+export type JobLevel =
+  | "proprietario"
+  | "ceo"
+  | "cmo"
+  | "diretor_comercial"
+  | "gerente_marketing"
+  | "gerente_comercial";
+
 export interface Lead {
   id: string;
   nome: string;
   email: string;
   whatsapp: string;
+  cargo?: JobLevel;
   revenue_range: RevenueRange;
   source?: string;
   medium?: string;
@@ -23,8 +32,18 @@ export interface LeadFormData {
   nome: string;
   email: string;
   whatsapp: string;
+  cargo?: JobLevel;
   revenue_range: RevenueRange;
 }
+
+export const JOB_LEVELS: { value: JobLevel; label: string }[] = [
+  { value: "proprietario", label: "Proprietário" },
+  { value: "ceo", label: "CEO" },
+  { value: "cmo", label: "CMO" },
+  { value: "diretor_comercial", label: "Diretor Comercial" },
+  { value: "gerente_marketing", label: "Gerente de Marketing" },
+  { value: "gerente_comercial", label: "Gerente Comercial" },
+];
 
 export const REVENUE_RANGES: { value: RevenueRange; label: string }[] = [
   { value: "ate-80mil", label: "Até R$80mil por mês" },

@@ -10,6 +10,14 @@ export const leadFormSchema = z.object({
     .string()
     .min(14, "WhatsApp inválido")
     .max(15, "WhatsApp inválido"),
+  cargo: z.enum([
+    "proprietario",
+    "ceo",
+    "cmo",
+    "diretor_comercial",
+    "gerente_marketing",
+    "gerente_comercial",
+  ]).optional(),
   revenue_range: z.enum([
     "ate-80mil",
     "80mil-150mil",
