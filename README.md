@@ -17,13 +17,13 @@ Open [http://localhost:3000](http://localhost:3000). Build: `npm run build`.
   **`https://elite.adventurelabs.com.br/`**  
   (em preview: `https://<seu-dominio-vercel>/`). A rota `/inscreva-se` redireciona permanentemente para `/`.
 
-- **Rota no app:** `app/page.tsx` – página com Header, Hero, Benefits, TargetAudience, About, Problem, Solution, **QualificationForm**, FinalCTA e Footer.
+- **Rota no app:** `app/page.tsx` – página com Header, Hero, Benefits, TargetAudience, Problem, Solution, FinalCTA, About e Footer. O formulário aparece **apenas em popup** (todos os CTAs verdes abrem o modal).
 
-- **Componente do form:** `components/Form/QualificationForm.tsx` – envia para a tabela `elite.leads` (Supabase, schema `elite`).
+- **Componente do form:** `components/Form/QualificationForm.tsx` (dentro de `FormModal`) – envia para a tabela `elite.leads` (Supabase, schema `elite`). Link do grupo WhatsApp em `lib/constants.ts` (`WHATSAPP_GROUP_INVITE`).
 
 **Como testar:**
 
-1. Abrir `/` (ou `/inscreva-se`, que redireciona para `/`), preencher e enviar.
+1. Abrir `/` (ou `/inscreva-se`, que redireciona para `/`), clicar em qualquer CTA verde, preencher e enviar.
 2. Conferir em **Supabase → Table Editor → schema `elite` → tabela `leads`**.
 3. Fazer login em `/admin/login` com o usuário admin e abrir `/admin` para ver os leads no dashboard.
 
@@ -53,11 +53,11 @@ Dashboard de leads: `/admin` (protegido por login Supabase). Para restringir ace
 
 ## Imagem de fundo (Hero)
 
-Para exibir a imagem de loteamento em obras ao fundo da seção Hero (quase transparente), coloque o arquivo em **`public/loteamento-obras.jpg`** (ou `.webp`). Se o arquivo não existir, o Hero usa apenas o fundo navy.
+A imagem **`public/loteamento-obras.jpg`** (~116 KB) é exibida ao fundo da seção Hero com opacidade baixa (apoio visual). Origem: [Unsplash](https://unsplash.com/s/photos/construction) (licença livre). Para trocar, substitua o arquivo mantendo o nome.
 
 ## Deploy (Vercel)
 
-Variáveis de ambiente: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Ver `docs/SUPABASE_ELITE.md` para schema e domínio.
+Variáveis de ambiente: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Schema em `supabase-schema.sql`; correção de erro 42501/401 em `docs/SUPABASE_FORM_FIX.md`.
 
 ## Learn More
 

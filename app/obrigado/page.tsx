@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CheckCircle2, MessageCircle } from "lucide-react";
+import { WHATSAPP_GROUP_INVITE } from "@/lib/constants";
 
 export default function ObrigadoPage() {
   return (
@@ -49,7 +50,7 @@ export default function ObrigadoPage() {
 
           <div className="pt-6 border-t border-elite-navy/10">
             <a
-              href="https://wa.me/5511999999999?text=Olá!%20Acabei%20de%20me%20inscrever%20no%20webinar%20ELITE%20e%20gostaria%20de%20entrar%20no%20grupo%20VIP."
+              href={WHATSAPP_GROUP_INVITE}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-elite-cta hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors ring-2 ring-green-400/50 shadow-[0_0_20px_var(--color-elite-cta-glow)] hover:ring-green-300 hover:shadow-[0_0_24px_var(--color-elite-cta-glow)]"

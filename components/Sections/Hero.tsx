@@ -7,7 +7,7 @@ export function Hero() {
   const { openForm } = useFormModal();
   return (
     <section className="relative min-h-screen flex items-center justify-center text-elite-quartz pt-20 overflow-hidden">
-      {/* Background: loteamento em obras (quase transparente). Coloque public/loteamento-obras.jpg para ativar. */}
+      {/* Background: loteamento em obras (quase transparente). public/loteamento-obras.jpg (~116 KB). */}
       <div
         className="absolute inset-0 bg-elite-navy"
         aria-hidden
