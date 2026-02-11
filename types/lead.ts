@@ -22,8 +22,21 @@ export type EmployeeRange =
   | "201-500"
   | "acima-500";
 
+export type PipelinePipe = "mkt" | "sales";
+
+/** Etapa do funil (vinda do banco; criada/editada no admin). */
+export interface PipelineStageRecord {
+  id: string;
+  label: string;
+  sort_order: number;
+  pipe: PipelinePipe;
+  meta_conversion: boolean;
+  created_at: string;
+}
+
 export interface Lead {
   id: string;
+  form_id?: string;
   nome: string;
   email: string;
   whatsapp: string;
@@ -34,6 +47,10 @@ export interface Lead {
   source?: string;
   medium?: string;
   campaign?: string;
+  pipeline_stage_id?: string | null;
+  /** Preenchido quando o lead é carregado com join em pipeline_stages */
+  pipeline_stage?: PipelineStageRecord | null;
+  tags?: string[];
   created_at: string;
   updated_at: string;
 }
@@ -74,3 +91,4 @@ export const REVENUE_RANGES: { value: RevenueRange; label: string }[] = [
   { value: "500mil-1milhao", label: "De R$500mil a R$ 1 milhão por mês" },
   { value: "acima-1milhao", label: "Acima de R$ 1 milhão por mês" },
 ];
+

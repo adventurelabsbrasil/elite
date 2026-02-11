@@ -23,23 +23,36 @@ NEXT_PUBLIC_META_PIXEL_ID=1234567890123456
 
 Deixe em branco ou não defina a variável se não for usar Meta Pixel.
 
-### 1.3 Onde o pixel é carregado no projeto
+### 1.3 Conversões configuradas (o que o pixel dispara)
+
+| Evento      | Página / ação                    | Uso no Meta |
+|-------------|-----------------------------------|-------------|
+| **PageView**   | Qualquer página (layout)           | Visualização geral |
+| **ViewContent**| Homepage (`/` ou `elite.adventurelabs.com.br/`) | Viu a LP |
+| **Lead**       | Página de obrigado (`/obrigado`)   | Inscrição / conversão |
+
+Só o essencial: PageView em todas, ViewContent na LP, Lead na confirmação de inscrição.
+
+### 1.4 Onde está no código
 
 | Arquivo | Função |
 |--------|--------|
-| `components/Pixel/MetaPixel.tsx` | Injetar o script do Meta Pixel e disparar **PageView** em todas as páginas. |
-| `components/Pixel/ObrigadoPixel.tsx` | Disparar o evento **Lead** ao carregar a página de obrigado (pós-formulário). |
-| `app/layout.tsx` | Inclui `<MetaPixel />` no body. |
-| `app/obrigado/page.tsx` | Inclui `<ObrigadoPixel />` para registrar conversão Lead. |
+| `components/Pixel/MetaPixel.tsx` | Script do pixel + **PageView** em todas as páginas; funções `trackViewContent()` e `trackMetaLead()`. |
+| `components/Pixel/ViewContentPixel.tsx` | Dispara **ViewContent** ao carregar (usado só na homepage). |
+| `components/Pixel/ObrigadoPixel.tsx` | Dispara **Lead** ao carregar a página de obrigado. |
+| `app/layout.tsx` | Inclui `<MetaPixel />`. |
+| `app/page.tsx` | Inclui `<ViewContentPixel />`. |
+| `app/obrigado/page.tsx` | Inclui `<ObrigadoPixel />`. |
 
 Se `NEXT_PUBLIC_META_PIXEL_ID` não estiver definido, o pixel não é carregado (sem erro).
 
-### 1.4 Eventos recomendados para tráfego
+### 1.5 Conversões de pipeline (CRM)
 
-| Evento   | Quando disparar              | Uso em campanhas        |
-|----------|------------------------------|-------------------------|
-| PageView | Carregamento de qualquer página | Remarketing, otimização |
-| Lead     | Após envio do formulário (redirect /obrigado) | Conversão, otimização de lead |
+Quando um lead é movido para um estágio considerado conversão no pipeline do admin, o front dispara um evento **Lead** com parâmetros `content_name` (estágio), `content_category: 'pipeline'` e `lead_id`. Assim o Meta entende que aquele lead é importante para campanhas.
+
+- **Estágios que disparam conversão:** configuráveis no admin. Em **Etapas do funil**, marque a opção **Conversão Meta** nas etapas em que o lead deve disparar evento (ex.: agendou diagnóstico, virou cliente).
+- **Onde:** ao alterar o estágio no pipeline ou na tabela do admin, após o UPDATE no Supabase.
+- **No Gerenciador de Eventos:** você pode criar uma conversão customizada baseada no evento Lead com `content_category = pipeline` ou usar o evento Lead padrão para otimização.
 
 ---
 
@@ -83,8 +96,8 @@ Para implementar Google Ads no mesmo padrão do Meta Pixel, crie um componente q
 ### Meta
 
 1. Instale a extensão [Meta Pixel Helper](https://www.facebook.com/business/help/742478679120153) (Chrome).
-2. Acesse a LP e a página de obrigado após enviar o formulário.
-3. Confira se **PageView** e **Lead** aparecem na extensão e no Gerenciador de Eventos (tempo real).
+2. Acesse a homepage (deve disparar **PageView** + **ViewContent**), depois envie o formulário e vá para /obrigado (**Lead**).
+3. Confira os três eventos na extensão e no Gerenciador de Eventos (tempo real).
 
 ### Google Ads
 
@@ -98,7 +111,7 @@ Para implementar Google Ads no mesmo padrão do Meta Pixel, crie um componente q
 |-------------------|-------------------------------------------|
 | ID Meta Pixel     | `NEXT_PUBLIC_META_PIXEL_ID` no .env/Vercel |
 | ID Google Ads     | `NEXT_PUBLIC_GOOGLE_ADS_ID` + conversion label |
-| Código no site    | Layout global + página /obrigado (evento Lead) |
+| Código no site    | Layout (PageView) + homepage (ViewContent) + /obrigado (Lead) |
 | Teste             | Pixel Helper (Meta) + Conversões (Google) |
 
 Com o pixel instalado e os eventos de Lead disparando, você pode criar campanhas de tráfego pago (Meta e/ou Google) e otimizar para conversões de lead.

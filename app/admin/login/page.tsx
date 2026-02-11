@@ -5,11 +5,14 @@ import { createClient } from "@/lib/supabase/client";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Loader2 } from "lucide-react";
 
+/** URL para onde o Supabase redireciona após OAuth. Em produção defina NEXT_PUBLIC_APP_URL na Vercel (ex.: https://elite.adventurelabs.com.br) para evitar redirect para localhost. */
 function getRedirectUrl() {
-  if (typeof window !== "undefined") return `${window.location.origin}/auth/callback`;
-  return process.env.NEXT_PUBLIC_APP_URL
-    ? `${process.env.NEXT_PUBLIC_APP_URL}/auth/callback`
-    : "http://localhost:3000/auth/callback";
+  const base =
+    process.env.NEXT_PUBLIC_APP_URL ||
+    (typeof window !== "undefined" ? window.location?.origin : "") ||
+    "http://localhost:3000";
+  const url = base.startsWith("http") ? base : `https://${base}`;
+  return `${url.replace(/\/$/, "")}/auth/callback`;
 }
 
 function AdminLoginForm() {

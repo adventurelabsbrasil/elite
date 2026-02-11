@@ -9,10 +9,12 @@ import { Benefits } from "@/components/Sections/Benefits";
 import { TargetAudience } from "@/components/Sections/TargetAudience";
 import { About } from "@/components/Sections/About";
 import { FinalCTA } from "@/components/Sections/FinalCTA";
+import { ViewContentPixel } from "@/components/Pixel/ViewContentPixel";
 
 export default function HomePage() {
   return (
     <FormModalProvider>
+      <ViewContentPixel />
       <main className="min-h-screen bg-elite-navy">
         <Header />
         <Hero />

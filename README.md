@@ -62,19 +62,27 @@ Crie `.env.local` na raiz com essas variáveis. Schema e tabelas: executar `supa
 - **Após login:** acesso a `/admin` (dashboard com tabela de leads, filtros, export CSV e gráficos).
 - **Restringir a um único admin:** ver instruções no final de `supabase-schema.sql` (seção "Admin (opcional)" com RLS por `auth.uid()`).
 
-### Login com Google
+### Login com Google (evitar redirect para localhost)
 
-1. No **Supabase Dashboard:** Authentication → **Providers** → ative **Google** e preencha Client ID e Client Secret (Google Cloud Console: credenciais OAuth 2.0, tipo "Aplicativo da Web", URL de redirecionamento autorizado: `https://<seu-projeto>.supabase.co/auth/v1/callback`).
-2. Em **Authentication → URL Configuration**, adicione em **Redirect URLs** as URLs do seu app que recebem o callback, por exemplo:
-   - `http://localhost:3000/auth/callback` (dev)
-   - `https://elite.adventurelabs.com.br/auth/callback` (produção)
-3. Na tela de login do admin, use o botão **Entrar com Google**.
+1. **Vercel (produção):** defina a variável de ambiente **`NEXT_PUBLIC_APP_URL`** com a URL do site (ex.: `https://elite.adventurelabs.com.br`). Assim o OAuth usa sempre essa URL para o callback e não localhost.
+2. **Supabase Dashboard → Authentication → URL Configuration:**
+   - **Site URL:** use a URL de produção (ex.: `https://elite.adventurelabs.com.br`). Se estiver como `http://localhost:3000`, o Supabase pode redirecionar para localhost após o login.
+   - **Redirect URLs:** adicione exatamente:
+     - `https://elite.adventurelabs.com.br/auth/callback` (produção)
+     - `http://localhost:3000/auth/callback` (dev)
+3. **Supabase → Authentication → Providers → Google:** ative e preencha Client ID e Secret. No Google Cloud Console, em credenciais OAuth 2.0 (tipo "Aplicativo da Web"), a URI de redirecionamento autorizado deve ser `https://<id-do-projeto>.supabase.co/auth/v1/callback`.
+4. Na tela de login do admin, use **Entrar com Google**.
 
 ---
 
 ## Deploy (Vercel)
 
-Configurar no projeto Vercel as variáveis `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Schema e permissões: `supabase-schema.sql`; em caso de erro 42501/401 no formulário, seguir `docs/SUPABASE_FORM_FIX.md`.
+Variáveis de ambiente recomendadas:
+
+- `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY` (obrigatórias).
+- **`NEXT_PUBLIC_APP_URL`** = URL do site em produção (ex.: `https://elite.adventurelabs.com.br`), para o login com Google redirecionar corretamente e não para localhost.
+
+Schema e permissões: `supabase-schema.sql`; em caso de erro 42501/401 no formulário, seguir `docs/SUPABASE_FORM_FIX.md`.
 
 ---
 

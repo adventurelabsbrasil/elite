@@ -39,9 +39,34 @@ export function MetaPixel() {
   );
 }
 
-/** Dispara o evento Lead do Meta Pixel (usar na página de obrigado). */
+function getFbq() {
+  if (typeof window === "undefined") return undefined;
+  return (window as unknown as { fbq?: (a: string, b: string, c?: object) => void }).fbq;
+}
+
+/** ViewContent = viu a página (homepage). */
+export function trackViewContent() {
+  if (!META_PIXEL_ID) return;
+  const fbq = getFbq();
+  if (fbq) fbq("track", "ViewContent", { content_name: "LP ELITE" });
+}
+
+/** Lead = inscrição (página de obrigado). */
 export function trackMetaLead() {
-  if (typeof window === "undefined" || !META_PIXEL_ID) return;
-  const fbq = (window as unknown as { fbq?: (a: string, b: string) => void }).fbq;
+  if (!META_PIXEL_ID) return;
+  const fbq = getFbq();
   if (fbq) fbq("track", "Lead");
+}
+
+/** Conversão de pipeline: dispara quando o lead avança para estágio marcado como conversão no admin. */
+export function trackPipelineConversion(leadId: string, stageLabel: string) {
+  if (!META_PIXEL_ID) return;
+  const fbq = getFbq();
+  if (fbq) {
+    fbq("track", "Lead", {
+      content_name: stageLabel,
+      content_category: "pipeline",
+      lead_id: leadId,
+    });
+  }
 }

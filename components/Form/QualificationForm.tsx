@@ -52,6 +52,7 @@ export function QualificationForm() {
         .schema("elite")
         .from("leads")
         .insert({
+          form_id: "form-webinar",
           nome: data.nome,
           email: data.email,
           whatsapp: data.whatsapp.replace(/\D/g, ""),
