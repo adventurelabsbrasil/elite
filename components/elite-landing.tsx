@@ -20,7 +20,9 @@ export default function EliteLanding() {
         <div className="mx-auto max-w-3xl">
           <div className="mb-6 bg-elite-sold-red py-2.5 px-4 text-center">
             <p className="text-white text-sm font-semibold uppercase tracking-wide">
-              Exclusivo para donos de loteadoras e incorporadoras
+              Exclusivo para{" "}
+              <span className="text-elite-flow font-bold">Dono de Loteadora</span>
+              {" "}e incorporadoras
             </p>
           </div>
           <h1 className="mb-6 text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl text-elite-quartz">
@@ -84,7 +86,8 @@ export default function EliteLanding() {
       <section className="border-y border-elite-flow/20 bg-elite-navy/90 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl text-elite-quartz">
-            Para quem é: Dono de Loteadora
+            Para quem é:{" "}
+            <span className="text-elite-flow font-bold">Dono de Loteadora</span>
           </h2>
           <ul className="space-y-4">
             {[

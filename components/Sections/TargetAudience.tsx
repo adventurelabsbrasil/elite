@@ -23,7 +23,8 @@ export function TargetAudience() {
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-elite-quartz">
-              Para quem é: Dono de Loteadora
+              Para quem é:{" "}
+              <span className="text-elite-flow font-bold">Dono de Loteadora</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto">

@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin, ExternalLink, Lock } from "lucide-react";
 import { BackToTop } from "./BackToTop";
 
 const CNPJ = "64.196.278/0001-69";
@@ -54,7 +54,19 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <div className="pt-6 text-center">
+          <div className="pt-6 mt-6 border-t border-elite-flow/10">
+            <p className="text-xs text-elite-quartz/70 text-center max-w-3xl mx-auto leading-relaxed mb-6">
+              Loteadora Elite não é uma incorporadora, e sim um método validado de lançamento para aceleração de resultados, de autoria de Rodrigo Ribas, ex-Head de Marketing da Young Empreendimentos e fundador sócio-proprietário da Adventure Labs. Todas as comunicações são voltadas exclusivamente para o programa.
+            </p>
+            <div className="flex justify-center mb-6">
+              <a
+                href="/admin/login"
+                className="inline-flex items-center gap-2 text-xs text-elite-quartz/60 hover:text-elite-flow transition-colors"
+              >
+                <Lock className="w-3.5 h-3.5" />
+                Área administrativa
+              </a>
+            </div>
             <p className="text-sm text-elite-quartz/80">
               © 2026 Adventure Labs. Todos os direitos reservados.
             </p>

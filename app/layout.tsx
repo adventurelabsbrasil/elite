@@ -6,10 +6,7 @@ export const metadata: Metadata = {
   description:
     "A Estratégia Martech de quem lançou +2.500 Imóveis e esgotou um loteamento em um único dia. Meet exclusivo 10/02.",
   icons: {
-    icon: [
-      { url: "/icon.png", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
+    icon: [{ url: "/Isotipo.png", type: "image/png" }],
   },
 };
 

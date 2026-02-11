@@ -16,17 +16,19 @@ export function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/loteamento-obras.jpg')",
-          opacity: 0.2,
+          opacity: 0.4,
         }}
         aria-hidden
       />
-      <div className="absolute inset-0 bg-elite-navy/85" aria-hidden />
+      <div className="absolute inset-0 bg-elite-navy/65" aria-hidden />
       <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Tarja em linha própria; abaixo, headline e foto alinhados pelo topo */}
         <div className="flex justify-center w-full mb-6 lg:mb-8">
           <div className="bg-elite-sold-red py-2.5 px-5 text-center w-full max-w-max mx-auto">
             <span className="text-white font-semibold text-sm uppercase tracking-wide">
-              Exclusivo para donos de loteadoras e incorporadoras
+              Exclusivo para{" "}
+              <span className="text-elite-flow font-bold">Dono de Loteadora</span>
+              {" "}e incorporadoras
             </span>
           </div>
         </div>
@@ -74,12 +76,12 @@ export function Hero() {
           </div>
 
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[320px] md:max-w-[380px] aspect-[4/3] max-h-[50vh] lg:max-h-[70vh] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full max-w-[320px] md:max-w-[380px] min-h-[280px] lg:min-h-[360px] rounded-2xl overflow-hidden shadow-2xl bg-elite-navy/30">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/partnership.png"
                 alt="Parcerias e colaboração profissional - Método ELITE"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 fetchPriority="high"
               />
             </div>
