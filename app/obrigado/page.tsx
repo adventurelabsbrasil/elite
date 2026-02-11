@@ -2,6 +2,10 @@ import Link from "next/link";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 import { WHATSAPP_GROUP_INVITE } from "@/lib/constants";
 
+export const metadata = {
+  title: "ELITE - Parabéns pela decisão",
+};
+
 export default function ObrigadoPage() {
   return (
     <main className="min-h-screen bg-elite-navy flex items-center justify-center py-20 px-4">

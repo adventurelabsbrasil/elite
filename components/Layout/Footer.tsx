@@ -1,10 +1,12 @@
-import { Mail, Phone, MapPin, ExternalLink, Lock } from "lucide-react";
+import { Mail, Phone, MapPin, ExternalLink, Lock, Instagram } from "lucide-react";
 import { BackToTop } from "./BackToTop";
 
 const CNPJ = "64.196.278/0001-69";
 const ADDRESS = "AV DO PARQUE, 501, sala 09, JAU, 95500-000 — SANTO ANTONIO DA PATRULHA/RS";
 const PHONES = "51 3662 5145 | 51 998730488";
 const WEBSITE = "https://www.adventurelabs.com.br";
+const INSTAGRAM_HANDLE = "ribasrodrigo91";
+const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
 
 export function Footer() {
   return (
@@ -73,6 +75,17 @@ export function Footer() {
             <p className="mt-1 text-sm text-elite-quartz/70">
               Site criado por{" "}
               <span className="font-semibold text-elite-flow">Adventure Labs</span>
+              {" · "}
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-elite-quartz/70 hover:text-elite-flow transition-colors"
+                aria-label={`Instagram @${INSTAGRAM_HANDLE}`}
+              >
+                <Instagram className="w-3.5 h-3.5" />
+                @{INSTAGRAM_HANDLE}
+              </a>
             </p>
           </div>
         </div>

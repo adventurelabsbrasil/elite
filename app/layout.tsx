@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Método Elite | Estratégia Martech para Loteadoras",
+  title: "ELITE - Rodrigo Ribas",
   description:
     "A Estratégia Martech de quem lançou +2.000 Imóveis e esgotou um loteamento em um único dia. Meet exclusivo 10/02.",
   icons: {

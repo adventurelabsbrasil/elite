@@ -27,7 +27,7 @@ export function Hero() {
           <div className="bg-elite-sold-red py-2.5 px-5 text-center w-full max-w-max mx-auto">
             <span className="text-white font-semibold text-sm uppercase tracking-wide">
               Exclusivo para{" "}
-              <span className="text-elite-glow font-bold">Dono de Loteadora</span>
+              <span className="px-1.5 py-0.5 rounded bg-white/95 text-elite-navy font-bold">Dono de Loteadora</span>
               {" "}que quer acelerar o VGV
             </span>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Loader2 } from "lucide-react";
@@ -12,7 +12,7 @@ function getRedirectUrl() {
     : "http://localhost:3000/auth/callback";
 }
 
-export default function AdminLoginPage() {
+function AdminLoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -183,5 +183,21 @@ export default function AdminLoginPage() {
         </form>
       </div>
     </main>
+  );
+}
+
+export default function AdminLoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-elite-quartz flex items-center justify-center py-20 px-4">
+          <div className="max-w-md w-full bg-white rounded-2xl p-8 shadow-xl border border-elite-navy/10 flex items-center justify-center min-h-[320px]">
+            <Loader2 className="w-8 h-8 animate-spin text-elite-flow" />
+          </div>
+        </main>
+      }
+    >
+      <AdminLoginForm />
+    </Suspense>
   );
 }
