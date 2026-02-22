@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { MetaPixel } from "@/components/Pixel/MetaPixel";
+import { GoogleAdsGtag } from "@/components/Pixel/GoogleAdsGtag";
+import { HeatmapTracker } from "@/components/Heatmap/HeatmapTracker";
 
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || "";
 
@@ -51,6 +53,8 @@ export default function RootLayout({
     <html lang="pt-BR" className="dark">
       <body className="antialiased" style={{ fontFamily: "var(--font-sans)" }}>
         <MetaPixel />
+        <GoogleAdsGtag />
+        <HeatmapTracker />
         {children}
       </body>
     </html>
