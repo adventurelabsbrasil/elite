@@ -2,11 +2,13 @@
 
 import { useEffect } from "react";
 import { trackMetaLead } from "./MetaPixel";
+import { trackGoogleAdsConversion } from "./GoogleAdsGtag";
 
-/** Dispara evento Lead do Meta Pixel ao montar (página de obrigado). */
+/** Dispara Lead (Meta) e conversão (Google Ads) ao montar (página de obrigado). */
 export function ObrigadoPixel() {
   useEffect(() => {
     trackMetaLead();
+    trackGoogleAdsConversion();
   }, []);
   return null;
 }
