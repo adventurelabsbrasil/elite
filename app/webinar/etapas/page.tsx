@@ -1,155 +1,125 @@
 import { Suspense } from "react";
 import { RevealDeck, type RevealStep } from "@/components/Webinar/RevealDeck";
+import { Zap, Clock } from "lucide-react";
 
 const STEPS: RevealStep[] = [
   {
-    title: "Etapas da campanha – Visão geral",
+    title: "Etapas da campanha",
+    icon: <Zap className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
-      <>
-        <p className="mb-4">As 5 fases do GTM de um empreendimento imobiliário:</p>
-        <ol className="list-decimal pl-5 space-y-2">
-          <li>
-            <strong className="text-elite-flow">BRANDING</strong> – Desenvolver conceitos fortes e
-            impactantes.
-          </li>
-          <li>
-            <strong className="text-elite-flow">TEASER</strong> – Gerar expectativa e curiosidade
-            com campanhas enigmáticas.
-          </li>
-          <li>
-            <strong className="text-elite-flow">PRÉ-LANÇAMENTO</strong> – Ações de aquecimento e
-            engajamento, conversão e atendimento no PDV.
-          </li>
-          <li>
-            <strong className="text-elite-flow">LANÇAMENTO</strong> – Evento de abertura oficial da
-            venda.
-          </li>
-          <li>
-            <strong className="text-elite-flow">PÓS-LANÇAMENTO</strong> – Acompanhamento de leads,
-            carteira ativa, análise e feedback.
-          </li>
-        </ol>
-      </>
+      <p className="text-lg text-elite-quartz/90">
+        As 5 fases do GTM: Branding → Teaser → Pré-lançamento → Lançamento → Pós-lançamento.
+      </p>
     ),
   },
   {
     title: "BRANDING",
+    icon: <Zap className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
       <>
-        <p className="mb-4">Desenvolver conceitos fortes e impactantes (ex: &quot;Não Compre Terreno Agora, Especialista em Lançamentos&quot;).</p>
-        <p className="text-elite-glow font-medium">Duração: ~3 meses</p>
+        <p className="mb-4">
+          Conceitos fortes e impactantes (ex: &quot;Não Compre Terreno Agora, Especialista em
+          Lançamentos&quot;).
+        </p>
+        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-elite-glow/20 text-elite-glow font-medium text-sm">
+          <Clock className="h-4 w-4" />
+          ~3 meses
+        </span>
       </>
     ),
   },
   {
     title: "TEASER",
+    icon: <Zap className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
       <>
-        <p className="mb-4">Gerar expectativa e curiosidade com campanhas enigmáticas.</p>
-        <p className="text-elite-glow font-medium mb-4">Duração: ~10 dias antes da campanha</p>
-        <p className="text-elite-flow/90 text-sm">
-          <strong>Lembrete:</strong> Garantir que todos os materiais estejam revisados e organizados.
+        <p className="mb-4">Expectativa e curiosidade com campanhas enigmáticas.</p>
+        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-elite-glow/20 text-elite-glow font-medium text-sm">
+          <Clock className="h-4 w-4" />
+          ~10 dias antes da campanha
+        </span>
+        <p className="mt-4 text-elite-flow/90 text-sm">
+          <strong>Lembrete:</strong> Materiais revisados e organizados.
         </p>
       </>
     ),
   },
   {
     title: "PRÉ-LANÇAMENTO",
+    icon: <Zap className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
       <>
         <p className="mb-4">
-          Realizar ações de aquecimento e engajamento do público (ex: Maratona Young, Campanha
-          Oficial). Ações intensivas de conversão e atendimento no ponto de venda.
+          Aquecimento e engajamento (ex: Maratona Young). Conversão e atendimento no PDV.
         </p>
-        <p className="text-elite-glow font-medium mb-4">Duração: ~45 dias</p>
+        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-elite-glow/20 text-elite-glow font-medium text-sm mb-4">
+          <Clock className="h-4 w-4" />
+          ~45 dias
+        </span>
         <ul className="space-y-1 text-sm text-elite-quartz/85">
-          <li>
-            <strong>Lembrete:</strong> Avaliar a duração do pré-lançamento para não se tornar
-            cansativo.
-          </li>
-          <li>
-            <strong>Lembrete:</strong> Contratar domínio personalizado e integrar com CRM.
-          </li>
-          <li>
-            <strong>Lembrete:</strong> Configurar pixels, tag manager e tags de conversão de
-            formulário.
-          </li>
-          <li>
-            <strong>Lembrete:</strong> Criar planejador de palavras-chave no Google Ads.
-          </li>
+          <li>Contratar domínio e integrar CRM</li>
+          <li>Configurar pixels e tags de conversão</li>
+          <li>Planejar palavras-chave no Google Ads</li>
+          <li>Avaliar duração para não cansar</li>
         </ul>
       </>
     ),
   },
   {
     title: "LANÇAMENTO",
+    icon: <Zap className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
       <>
         <p className="mb-4">Evento de abertura oficial da venda.</p>
-        <p className="text-elite-glow font-medium mb-4">Duração: evento de 1 dia</p>
+        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-elite-glow/20 text-elite-glow font-medium text-sm mb-4">
+          <Clock className="h-4 w-4" />
+          1 dia
+        </span>
         <ul className="space-y-1 text-sm text-elite-quartz/85">
-          <li>
-            <strong>Lembrete:</strong> Designar um líder para logística do evento e compartilhar
-            cronograma detalhado.
-          </li>
-          <li>
-            <strong>Lembrete:</strong> Garantir equipamentos essenciais (impressoras, computadores).
-          </li>
-          <li>
-            <strong>Lembrete:</strong> Atendimento rápido de leads (até 5 minutos).
-          </li>
+          <li>Líder para logística e cronograma</li>
+          <li>Impressoras e computadores no local</li>
+          <li>Atendimento rápido (até 5 min)</li>
         </ul>
       </>
     ),
   },
   {
     title: "PÓS-LANÇAMENTO",
+    icon: <Zap className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
       <>
         <p className="mb-4">
-          Acompanhamento de leads e clientes que fizeram ficha e não fecharam. Trabalhar carteira
-          ativa e perdidos, ações corretivas da campanha, análise de performance e resultados,
-          retorno e feedback dos resultados da equipe.
+          Acompanhamento de leads e fichas não fechadas. Carteira ativa, análise e feedback.
         </p>
-        <p className="text-elite-glow font-medium mb-4">Duração: ~90 dias</p>
+        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-elite-glow/20 text-elite-glow font-medium text-sm mb-4">
+          <Clock className="h-4 w-4" />
+          ~90 dias
+        </span>
         <ul className="space-y-1 text-sm text-elite-quartz/85">
-          <li>
-            <strong>Lembrete:</strong> Otimizar o tráfego pago, evitando muitos objetivos
-            simultaneamente.
-          </li>
-          <li>
-            <strong>Lembrete:</strong> Frequência de e-mail marketing (semanal no auge da campanha).
-          </li>
-          <li>
-            <strong>Lembrete:</strong> Monitoramento de leads com relatório diário do funil de
-            marketing.
-          </li>
+          <li>Otimizar tráfego pago (evitar muitos objetivos)</li>
+          <li>E-mail marketing semanal no auge</li>
+          <li>Relatório diário do funil</li>
         </ul>
       </>
     ),
   },
   {
-    title: "Melhoria contínua / Lições aprendidas",
+    title: "Melhoria contínua",
+    icon: <Zap className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
       <>
         <p className="mb-4">
-          <strong>Após lançamentos:</strong> Análise completa de Fichas, Vendas, Conversão, Pontos
-          Negativos, Oportunidades de Melhoria e Pontos Positivos.
+          <strong>Após lançamentos:</strong> Análise de Fichas, Vendas, Conversão, pontos negativos e
+          oportunidades.
         </p>
         <ul className="space-y-1 text-sm">
-          <li>Lembrete: Criar um processo formal para lidar com situações de crise.</li>
-          <li>Lembrete: Avaliar a composição da equipe de vendas (dois consultores e um assistente).</li>
-          <li>Lembrete: Comunicar claramente os preços aos corretores.</li>
+          <li>Processo formal para situações de crise</li>
+          <li>Avaliar equipe (2 consultores + 1 assistente)</li>
+          <li>Comunicar preços aos corretores</li>
         </ul>
         <p className="font-medium text-elite-flow mt-4 mb-2">Diretrizes:</p>
-        <ul className="text-sm">
-          <li>Identificação de problemas</li>
-          <li>Proposição de melhorias</li>
-          <li>Análise de canais</li>
-          <li>Aprimoramento de processos</li>
-          <li>Otimização de marketing</li>
-          <li>Treinamento de equipes</li>
-          <li>Envolvimento da equipe</li>
+        <ul className="text-sm space-y-0.5">
+          <li>Identificação de problemas → Melhorias → Canais → Processos → Marketing → Equipes</li>
         </ul>
       </>
     ),
@@ -159,7 +129,7 @@ const STEPS: RevealStep[] = [
 export default function EtapasPage() {
   return (
     <Suspense fallback={<div className="text-elite-quartz/70">Carregando...</div>}>
-      <RevealDeck steps={STEPS} backHref="/webinar" backLabel="Índice" />
+      <RevealDeck steps={STEPS} backHref="/webinar" backLabel="Índice" timelineSlot="etapas" />
     </Suspense>
   );
 }

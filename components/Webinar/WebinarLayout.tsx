@@ -27,7 +27,7 @@ export function WebinarLayout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 max-w-5xl">
+      <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6 max-w-5xl">
         {children}
       </main>
 

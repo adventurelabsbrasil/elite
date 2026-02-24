@@ -1,154 +1,115 @@
 import { Suspense } from "react";
 import { RevealDeck, type RevealStep } from "@/components/Webinar/RevealDeck";
+import { Search, Package, Settings, Users, TrendingUp } from "lucide-react";
 
 const STEPS: RevealStep[] = [
   {
-    title: "1. Estratégia e pesquisa aprofundada",
+    title: "1. Estratégia e pesquisa (1/2)",
+    icon: <Search className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
-      <ul className="space-y-2 text-sm">
+      <ul className="space-y-2">
         <li>
-          <strong>Pesquisa de Público-Alvo Local:</strong> Antes de produzir qualquer material,
-          realizar pesquisa aprofundada para compreender mentalidade, preferências (linguagem,
-          conteúdo), valores e dores do público-alvo local (gírias, cultura, personalidades da
-          região).
+          <strong className="text-elite-flow">Pesquisa de público-alvo local:</strong> Mentalidade,
+          preferências, valores e dores (gírias, cultura da região) antes de produzir material.
         </li>
         <li>
-          <strong>Análise Competitiva Detalhada:</strong> Análise mais detalhada da concorrência em
-          posicionamento comercial e de marketing, para ajustar rapidamente a comunicação e evitar
-          ajustes tardios.
-        </li>
-        <li>
-          <strong>Ficha Técnica do Empreendimento:</strong> Incluir todas as informações cruciais
-          para todas as equipes; implantação detalhada com tamanhos de lotes e versão minimalista
-          com legendas claras (cores, numeração lógica como A1, B15).
-        </li>
-        <li>
-          <strong>Definição de Atributos e Fases para Renders:</strong> Definir atributos e
-          divisão de fases antes da criação dos renders; garantir alinhamento com a oferta final
-          (ex.: não mostrar casas em área comercial se houver lotes comerciais).
+          <strong className="text-elite-flow">Análise competitiva:</strong> Concorrência em
+          posicionamento comercial e marketing para ajustar a comunicação a tempo.
         </li>
       </ul>
     ),
   },
   {
-    title: "2. Materiais e produção",
+    title: "1. Estratégia e pesquisa (2/2)",
+    icon: <Search className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
-      <ul className="space-y-2 text-sm">
+      <ul className="space-y-2">
         <li>
-          <strong>Antecipação na Produção de Materiais Físicos:</strong> Não deixar para depois do
-          início do pré-lançamento; imprimir pastas e camisetas bem antes; para outdoors, evitar
-          fundos escuros e usar comunicação objetiva.
+          <strong className="text-elite-flow">Ficha técnica:</strong> Informações cruciais para
+          todas as equipes; implantação com tamanhos de lotes; legendas claras (A1, B15).
         </li>
         <li>
-          <strong>Qualidade dos Materiais Físicos:</strong> Investir em materiais de melhor
-          qualidade (ex.: windbanners) e evitar fornecedores com histórico de produtos inferiores.
-        </li>
-        <li>
-          <strong>Clareza com Fornecedores:</strong> Esclarecer condições de pagamento e entrega
-          antes de contratar; mapear fornecedores validados.
-        </li>
-        <li>
-          <strong>Vídeos e Conteúdo Digital:</strong> Vídeos longos para alcance; Motions/Reels/Shorts
-          para desempenho; vídeos institucionais com marca/cidade/local nas primeiras cenas.
-        </li>
-        <li>
-          <strong>Testes A/B e Hotsite x Landing Pages:</strong> Realizar testes A/B em criativos e
-          landing pages; avaliar se hotsite ou LPs mais simples geram mais leads no pré-lançamento.
-        </li>
-        <li>
-          <strong>Canais de Conteúdo:</strong> Incluir na lista: Meta, YouTube, Google Pesquisa,
-          TikTok, WhatsApp, Email Marketing, rádio, jornal, influenciadores, carro de som,
-          outdoor, revista, panfleto, banner, cavalete.
+          <strong className="text-elite-flow">Atributos e fases para renders:</strong> Definir
+          antes da criação; alinhar com a oferta final (ex.: não mostrar casas em área comercial).
         </li>
       </ul>
     ),
   },
   {
-    title: "3. Processos internos e ferramentas",
+    title: "2. Materiais e produção (1/2)",
+    icon: <Package className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
-      <ul className="space-y-2 text-sm">
-        <li>
-          <strong>Organização de Arquivos:</strong> Estrutura de pastas padronizada no Google Drive
-          (Planejamento, Desenvolvimento, Implementação, Mídia, Gestão comercial); pastas para
-          Youngers, Corretores, Jornais/Publicidade/Propaganda.
-        </li>
-        <li>
-          <strong>Ferramentas de Gerenciamento:</strong> Jira ou similar para tarefas, atribuições
-          e progresso; aplicativo pode ser mais prático que planilhas para revisão com tags e prazos.
-        </li>
-        <li>
-          <strong>Infraestrutura Digital e TI:</strong> Pixel, Analytics, DataStudio, UTM e CRM/MKT
-          prontos no Setup; especialista para eventos de conversão no Analytics.
-        </li>
-        <li>
-          <strong>Automação e Integração:</strong> Automações e integrações (ex.: Wix+Sellflux+RDCRM+Sheets+LookerStudio)
-          perfeitas; considerar automação para bloquear lotes vendidos ao imprimir contratos.
-        </li>
-        <li>
-          <strong>Backup de Leads:</strong> Backup diário; definir se WhatsApp ativo contabiliza
-          corretamente no RD Station.
-        </li>
+      <ul className="space-y-2">
+        <li>Antecipar produção de físicos (pastas, camisetas); outdoors com comunicação objetiva.</li>
+        <li>Qualidade dos materiais (ex.: windbanners); evitar fornecedores com histórico ruim.</li>
+        <li>Clareza com fornecedores: pagamento, entrega; mapear fornecedores validados.</li>
       </ul>
     ),
   },
   {
-    title: "4. Parceiros e equipe",
+    title: "2. Materiais e produção (2/2)",
+    icon: <Package className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
-      <ul className="space-y-2 text-sm">
-        <li>
-          <strong>Treinamento Imobiliárias/Corretores:</strong> Treinamentos mais aprofundados e
-          contínuos; reuniões semanais, controle por leads/pontuação ou comissão diferenciada.
-        </li>
-        <li>
-          <strong>Contratos com Influenciadores/Parceiros:</strong> Formalizar antes do início da
-          campanha, com expectativas e condições claras.
-        </li>
-        <li>
-          <strong>Cadastro para Corretores:</strong> Simplificar: dados básicos na primeira etapa,
-          detalhados na segunda, ou envio de fotos das fichas via WhatsApp.
-        </li>
-        <li>
-          <strong>Estrutura da Equipe de Vendas:</strong> Avaliar dois consultores e um assistente;
-          considerar SDR para qualificação rápida de leads; consultores focados só em vendas.
-        </li>
-        <li>
-          <strong>Gestão da Equipe em Campo:</strong> Planejar ida para a cidade (administração 30
-          dias antes, consultores 1 semana antes do teaser); escala e plano de folgas/férias.
-        </li>
-        <li>
-          <strong>Líder de Viagem/Hospedagem:</strong> Designar líder com diretrizes claras.
-        </li>
+      <ul className="space-y-2">
+        <li>Vídeos longos = alcance; Motions/Reels/Shorts = desempenho; marca/cidade nas primeiras cenas.</li>
+        <li>Testes A/B em criativos e LPs; avaliar hotsite vs LPs simples no pré-lançamento.</li>
+        <li>Canais: Meta, YouTube, Google, TikTok, WhatsApp, e-mail, rádio, outdoor, influenciadores, etc.</li>
+      </ul>
+    ),
+  },
+  {
+    title: "3. Processos e ferramentas (1/2)",
+    icon: <Settings className="h-8 w-8 sm:h-9 sm:w-9" />,
+    content: (
+      <ul className="space-y-2">
+        <li>Estrutura de pastas no Drive (Planejamento, Desenvolvimento, Mídia, Gestão); pastas Youngers, Corretores.</li>
+        <li>Jira ou similar para tarefas e prazos; aplicativo pode ser mais prático que planilhas.</li>
+      </ul>
+    ),
+  },
+  {
+    title: "3. Processos e ferramentas (2/2)",
+    icon: <Settings className="h-8 w-8 sm:h-9 sm:w-9" />,
+    content: (
+      <ul className="space-y-2">
+        <li>Pixel, Analytics, UTM e CRM prontos no Setup; especialista para eventos de conversão.</li>
+        <li>Automações e integrações perfeitas; automação para bloquear lotes vendidos ao imprimir.</li>
+        <li>Backup diário de leads; WhatsApp ativo contabilizando corretamente no RD Station.</li>
+      </ul>
+    ),
+  },
+  {
+    title: "4. Parceiros e equipe (1/2)",
+    icon: <Users className="h-8 w-8 sm:h-9 sm:w-9" />,
+    content: (
+      <ul className="space-y-2">
+        <li>Treinamento contínuo para imobiliárias e corretores; reuniões semanais ou comissão diferenciada.</li>
+        <li>Contratos com influenciadores/parceiros formalizados antes da campanha.</li>
+        <li>Cadastro de corretores simplificado (dados básicos primeiro; ou foto da ficha via WhatsApp).</li>
+      </ul>
+    ),
+  },
+  {
+    title: "4. Parceiros e equipe (2/2)",
+    icon: <Users className="h-8 w-8 sm:h-9 sm:w-9" />,
+    content: (
+      <ul className="space-y-2">
+        <li>Equipe de vendas: avaliar 2 consultores + 1 assistente; considerar SDR para qualificação.</li>
+        <li>Ida para a cidade: administração 30 dias antes, consultores 1 semana antes do teaser.</li>
+        <li>Líder de viagem/hospedagem com diretrizes claras.</li>
       </ul>
     ),
   },
   {
     title: "5. Campanhas digitais e análise",
+    icon: <TrendingUp className="h-8 w-8 sm:h-9 sm:w-9" />,
     content: (
-      <ul className="space-y-2 text-sm">
-        <li>
-          <strong>Comunicação de Preço:</strong> Ser claro com corretores (à vista e parcelado);
-          avaliar preço como argumento da campanha; para fichas de intenção, mais informações de
-          preços/parcelas se o objetivo for testar sucesso comercial antes de lançar.
-        </li>
-        <li>
-          <strong>Otimização do Tráfego Pago:</strong> Evitar muitos objetivos simultâneos;
-          concentrar em uma estratégia principal (hotsite ou mensagens).
-        </li>
-        <li>
-          <strong>E-mail Marketing:</strong> No máximo semanal no auge; agendar com 7 dias de
-          antecedência.
-        </li>
-        <li>
-          <strong>Engajamento da Base:</strong> Comercial cadastrar e-mails no RD Station
-          prontamente.
-        </li>
-        <li>
-          <strong>Spotify, TikTok Ads:</strong> TikTok para branding e prova social; mais testes
-          no pré-lançamento.
-        </li>
-        <li>
-          <strong>Monitoramento de Leads:</strong> Relatório diário do funil de marketing.
-        </li>
+      <ul className="space-y-2">
+        <li>Comunicação de preço clara aos corretores; avaliar preço como argumento da campanha.</li>
+        <li>Tráfego pago: uma estratégia principal (hotsite ou mensagens).</li>
+        <li>E-mail no máximo semanal no auge; agendar com 7 dias de antecedência.</li>
+        <li>Comercial cadastrar e-mails no RD Station; relatório diário do funil.</li>
+        <li>TikTok para branding e prova social; mais testes no pré-lançamento.</li>
       </ul>
     ),
   },
