@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { LogOut, LayoutDashboard, LayoutGrid, Table, Settings, ArrowLeft } from "lucide-react";
+import { LogOut, LayoutDashboard, LayoutGrid, Table, Settings, ArrowLeft, Thermometer, BarChart3 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
 const nav = [
@@ -10,6 +10,8 @@ const nav = [
   { href: "/admin/crm", label: "CRM", icon: LayoutGrid },
   { href: "/admin/leads", label: "Tabela de leads", icon: Table },
   { href: "/admin/etapas", label: "Etapas do funil", icon: Settings },
+  { href: "/admin/heatmap", label: "Mapa de calor", icon: Thermometer },
+  { href: "/admin/relatorios", label: "Relatórios", icon: BarChart3 },
 ] as const;
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
