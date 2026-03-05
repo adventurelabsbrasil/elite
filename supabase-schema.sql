@@ -25,6 +25,7 @@ create index if not exists elite_pipeline_stages_sort_order_idx on elite.pipelin
 
 grant select, insert, update, delete on elite.pipeline_stages to authenticated;
 alter table elite.pipeline_stages enable row level security;
+drop policy if exists "elite_pipeline_stages_all_authenticated" on elite.pipeline_stages;
 create policy "elite_pipeline_stages_all_authenticated"
   on elite.pipeline_stages for all to authenticated using (true) with check (true);
 
@@ -123,6 +124,40 @@ create policy "elite_leads_update_authenticated"
   on elite.leads for update to authenticated
   using (true)
   with check (true);
+
+-- Tabela de eventos para mapa de calor (cliques no site público)
+create table if not exists elite.heatmap_events (
+  id uuid default gen_random_uuid() primary key,
+  pathname text not null,
+  x_pct numeric not null check (x_pct >= 0 and x_pct <= 100),
+  y_pct numeric not null check (y_pct >= 0 and y_pct <= 100),
+  viewport_width int not null,
+  viewport_height int not null,
+  session_id text,
+  created_at timestamptz default timezone('utc'::text, now()) not null
+);
+
+create index if not exists elite_heatmap_events_pathname_created_at_idx on elite.heatmap_events(pathname, created_at desc);
+
+grant insert on elite.heatmap_events to anon, authenticated;
+grant select, delete on elite.heatmap_events to authenticated;
+
+alter table elite.heatmap_events enable row level security;
+
+drop policy if exists "elite_heatmap_events_insert_anon" on elite.heatmap_events;
+create policy "elite_heatmap_events_insert_anon"
+  on elite.heatmap_events for insert to anon, authenticated
+  with check (true);
+
+drop policy if exists "elite_heatmap_events_select_authenticated" on elite.heatmap_events;
+create policy "elite_heatmap_events_select_authenticated"
+  on elite.heatmap_events for select to authenticated
+  using (true);
+
+drop policy if exists "elite_heatmap_events_delete_authenticated" on elite.heatmap_events;
+create policy "elite_heatmap_events_delete_authenticated"
+  on elite.heatmap_events for delete to authenticated
+  using (true);
 
 -- Comentário para documentação
 comment on schema elite is 'Dados do produto ELITE (elite.adventurelabs.com.br). Isolado do restante do projeto adventurelabs.';

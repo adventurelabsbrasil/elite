@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
+      // Heatmap API is handled by Next.js (dev and prod)
+      { source: "/api/heatmap/:path*", destination: "/api/heatmap/:path*" },
       {
         source: "/api/:path*",
         destination:
